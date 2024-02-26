@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  /*Paleta de Cores*/
+  --color-main: #32195a;
+  --color-bottom: #32195a52;
+  --color-focus: #f25c05;
+  --color-white: #ffffff;
+  --color-black: #000000;
+}
+
+/*Estilo do Header*/
+header {
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-main);
+}
+
+header p {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: var(--color-white);
+}
+
+header img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+/*Estilo da Section*/
+
+.container {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 30px;
+
+  background-color: var(--color-bottom);
+}
+
+.text {
+  font-size: 1rem;
+  color: var(--color-black);
+  text-align: left;
+  margin: 5px 0;
+}
+
+/*Estilo da Section (input) */
+
+.container-input {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: 20px auto;
+  display: grid;
+  padding: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.input-value {
+  display: grid;
+  grid-template-columns: 1.4fr 2fr;
+  width: 100px;
+  border-bottom: 2px solid var(--color-main);
+  cursor: pointer;
+}
+
+.name-placeholder {
+  font-size: 1rem;
+  color: var(--color-white);
+  text-align: center;
+  background-color: var(--color-main);
+}
+
+.input-value input {
+  width: 100%;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--color-black);
+  background-color: var(--color-bottom);
+  border: none;
+  outline: none;
+}
+
+.btn {
+  margin: 30px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn button {
+  width: 180px;
+  height: 30px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--color-white);
+  background-color: var(--color-main);
+  transition: 0.3s ease-in-out;
+}
+
+/*Hover/Focus*/
+
+.btn button:hover {
+  background-color: var(--color-bottom);
+  border: 2px solid var(--color-main);
+  color: var(--color-main);
+}
+
+.histrograma {
+  margin: 10 auto;
+  padding: 10px;
+  text-align: center;
+  display: none;
+}
+.graphic {
+  max-width: 400px;
+  min-width: 250px;
+  height: 200px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  border: 2px solid #000000;
+  overflow: hidden;
+}
+
+.column {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end; /* Para alinhar as colunas na parte inferior */
+}
+
+.value {
+  width: 100%;
+  background-color: #1b1c1d; /* Cor de preenchimento da coluna */
+  margin: 0 1px;
+  height: 100%; /* Espaçamento entre as colunas */
+}
