@@ -1,3 +1,4 @@
+
 const elementValue = [],
   bottomValue = [];
 
@@ -27,12 +28,37 @@ function generationHistograma() {
   }
 }
 
-function downloadHistograma(){}
+document.addEventListener("DOMContentLoaded", () => {
+  valeuForm();
+});
 
-document
-  .getElementById("generation")
-  .addEventListener("click", generationHistograma);
+document.getElementById("generation").addEventListener("click", generationHistograma);
 
-  document
-  .getElementById("baixar")
-  .addEventListener("click", downloadHistograma);
+
+document.getElementById("baixar").addEventListener("click", () => {
+  const histrogramaDiv = document.querySelector(".histrograma");
+
+  html2canvas(histrogramaDiv).then(canvas => {
+    // Cria um link para download
+    const downloadLink = document.createElement("a");
+    
+    // Converte o canvas para uma URL de dados
+    const imageDataURL = canvas.toDataURL("image/png");
+    
+    // Define a URL do link para a imagem gerada
+    downloadLink.href = imageDataURL;
+    
+    // Define o atributo de download com um nome para o arquivo
+    downloadLink.download = "histograma.png";
+    
+    // Adiciona o link ao corpo do documento
+    document.body.appendChild(downloadLink);
+    
+    // Simula um clique no link para iniciar o download
+    downloadLink.click();
+    
+    // Remove o link do corpo do documento
+    document.body.removeChild(downloadLink);
+  });
+});
+

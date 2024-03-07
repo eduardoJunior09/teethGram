@@ -14,6 +14,12 @@
   --color-black: #000000;
 }
 
+body,
+html {
+  margin: 0;
+  height: 100%;
+}
+
 /*Estilo do Header*/
 header {
   width: 100%;
@@ -40,10 +46,9 @@ header img {
 
 .container {
   width: 90%;
-  height: 100%;
+  height: auto;
   margin: 0 auto;
   padding: 30px;
-
   background-color: var(--color-bottom);
 }
 

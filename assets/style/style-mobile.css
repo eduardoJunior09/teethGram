@@ -1,0 +1,8 @@
+@media(max-width: 625px){
+    .container-input {
+     
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+        gap: 10px;
+      }
+}
