@@ -136,23 +136,60 @@ header img {
   max-width: 400px;
   min-width: 250px;
   height: 200px;
-  margin: 20px auto;
+  margin: 5px auto;
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   border: 2px solid #000000;
   overflow: hidden;
 }
 
+.column-num {
+  max-width: 400px;
+  min-width: 250px;
+  height: auto;
+  margin: 2px auto;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  overflow: hidden;
+}
+
 .column {
   width: 100%;
   height: 100%;
+  margin-top: 5px;
   display: flex;
   align-items: flex-end; /* Para alinhar as colunas na parte inferior */
+}
+
+.column-bottom{
+  width: 100%;
+  height: 100%;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: flex-start; /* Para alinhar as colunas na parte inferior */
 }
 
 .value {
   width: 100%;
   background-color: #1b1c1d; /* Cor de preenchimento da coluna */
+  height: 100%;
+}
+
+.sub-value {
+  width: 100%;
+  background-color: #4e5055; /* Cor de preenchimento da coluna */
   margin: 0 1px;
-  height: 100%; /* Espaçamento entre as colunas */
+  height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.sub-value-bottom {
+  width: 100%;
+  background-color: #4e5055; /* Cor de preenchimento da coluna */
+  margin: 0 1px;
+  height: 100%;
+}
+
+.text-hist {
+  margin: 15px auto;
 }
