@@ -1,90 +1,79 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
+@import "reset-style.css";
 
+/*Paleta de Cores*/
 :root {
-  /*Paleta de Cores*/
-  --color-main: #32195a;
+  --color-principal: #32195a;
   --color-bottom: #32195a52;
   --color-focus: #f25c05;
   --color-white: #ffffff;
   --color-black: #000000;
 }
 
-body,
-html {
-  margin: 0;
-  height: 100%;
-}
-
 /*Estilo do Header*/
-header {
+
+.header {
   width: 100%;
   height: 60px;
-  padding: 10px;
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-main);
+  background-color: var(--color-principal);
 }
 
-header p {
-  font-size: 2rem;
-  font-weight: bolder;
+.header p {
+  font-size: 1.5rem;
+  font-weight: bold;
   color: var(--color-white);
+  margin: 0;
 }
 
 header img {
   width: 50px;
-  margin-right: 10px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 1rem;
 }
 
-/*Estilo da Section*/
+/*Estilo do Conteúdo Principal*/
 
 .container {
-  width: 90%;
-  height: auto;
+  width: 70%;
+  height: 100%; /*Ajustar á altura da tela*/
   margin: 0 auto;
-  padding: 30px;
+  padding: 1rem;
   background-color: var(--color-bottom);
 }
 
+/*Texto Informativo*/
 .text {
-  font-size: 1rem;
-  color: var(--color-black);
-  text-align: left;
-  margin: 5px 0;
+  text-align: center;
 }
 
-/*Estilo da Section (input) */
-
+/*Input*/
 .container-input {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  margin: 20px auto;
+  margin: 10px auto;
+  width: 80%;
+  padding: 1rem;
   display: grid;
-  padding: 10px;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  place-items: center;
+  grid-gap: 10px;
 }
 
 .input-value {
+  width: 100px;
   display: grid;
   grid-template-columns: 1.4fr 2fr;
-  width: 100px;
-  border-bottom: 2px solid var(--color-main);
-  cursor: pointer;
+  border-bottom: 2px solid var(--color-principal);
 }
 
 .name-placeholder {
   font-size: 1rem;
   color: var(--color-white);
   text-align: center;
-  background-color: var(--color-main);
+  background-color: var(--color-principal);
+  padding: 0.5rem;
 }
 
 .input-value input {
@@ -95,101 +84,113 @@ header img {
   background-color: var(--color-bottom);
   border: none;
   outline: none;
+  padding: 0.5rem;
 }
 
-.btn {
-  margin: 30px 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn button {
-  width: 180px;
-  height: 30px;
-  outline: none;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 1rem;
-  color: var(--color-white);
-  background-color: var(--color-main);
-  transition: 0.3s ease-in-out;
-}
-
-/*Hover/Focus*/
-
-.btn button:hover {
-  background-color: var(--color-bottom);
-  border: 2px solid var(--color-main);
-  color: var(--color-main);
-}
+/*Estilos gerais do histrogramas*/
 
 .histrograma {
-  margin: 10 auto;
-  padding: 10px;
+  margin: 10px auto;
+  padding: 1rem;
   text-align: center;
   display: none;
 }
-.graphic {
+
+/* Estilos do gráfico principal */
+
+.graphic,
+.column-num {
   max-width: 400px;
-  min-width: 250px;
-  height: 200px;
-  margin: 5px auto;
+  min-width: 150px;
   display: grid;
   grid-template-columns: repeat(16, 1fr);
-  border: 2px solid #000000;
   overflow: hidden;
+}
+
+.graphic {
+  height: 200px;
+  margin: 5px auto;
+  border: 2px solid #000000;
 }
 
 .column-num {
-  max-width: 400px;
-  min-width: 250px;
+  font-size: 1rem;
   height: auto;
   margin: 2px auto;
-  display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  overflow: hidden;
+}
+
+/*Estilos das colunas dos histrogramas (Superior/Inferior)*/
+.column,
+.column-bottom {
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
 
 .column {
-  width: 100%;
-  height: 100%;
-  margin-top: 5px;
-  display: flex;
-  align-items: flex-end; /* Para alinhar as colunas na parte inferior */
+  margin-top: 5px; /* Limitar o tamanho da coluna*/
+  align-items: flex-end; /* Alinha na base (valor alto) */
 }
 
-.column-bottom{
-  width: 100%;
-  height: 100%;
-  margin-bottom: 5px;
-  display: flex;
+.column-bottom {
+  margin-bottom: 5px; /* Limitar o tamanho da coluna*/
   align-items: flex-start; /* Para alinhar as colunas na parte inferior */
 }
 
-.value {
+.value,
+.sub-value,
+.sub-value-bottom {
   width: 100%;
-  background-color: #1b1c1d; /* Cor de preenchimento da coluna */
-  height: 100%;
+  height: 100%; /* Altura definida pela coluna pai */
+}
+
+.value {
+  background-color: #1b1c1d; /* Cor principal da barra */
 }
 
 .sub-value {
-  width: 100%;
-  background-color: #4e5055; /* Cor de preenchimento da coluna */
-  margin: 0 1px;
-  height: 100%;
+  margin: 0 1px; /* Espaçamento entre barras */
   display: flex;
   flex-direction: column-reverse;
+  background-color: #4e5055; /* Cor de preenchimento da coluna */
 }
 .sub-value-bottom {
-  width: 100%;
-  background-color: #4e5055; /* Cor de preenchimento da coluna */
-  margin: 0 1px;
-  height: 100%;
+  margin: 0 1px; /* Espaçamento entre barras */
+  background-color: #4e5055; /* Cor secundária da barra */
 }
 
+/* Estilos para texto do histograma */
 .text-hist {
   margin: 15px auto;
+}
+
+/*Bloco para download do histrograma*/
+
+.download-img{
+  width: 100%;
+  height: auto;
+  margin: 20px auto;
+  padding: 1rem;
+}
+/*Estilo dos botões*/
+
+.bloco-btn {
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.bloco-btn button {
+  background-color: var(--color-principal);
+  color: var(--color-white);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.bloco-btn button:hover {
+  background-color: var(--color-focus);
 }

@@ -1,49 +1,51 @@
-const elementValue = [],
+const elementValues = [], //Array para armazenar valores aleatórios gerados
   bottomValue = [];
 
-/*Função responsável por gerar valores aleatórios*/
-function getRandomA(min, max) {
-  return Math.random() * (max - min) + min;
+//Função para gerar um número aleatório dentro de um intervalo
+function getRandomA(min, max, decimals = 1) {
+  return (
+    Math.floor(Math.random() * (max - min + 1) + min) +
+    "." +
+    Array(decimals + 1).join("0")
+  );
 }
 
-/*Função responsável por adicionar valores aos campos de input*/
-function valeuForm() {
+//Função para preencher campos de entrada com valores aleatórios
+function populateInputs() {
   for (let i = 1; i <= 32; i++) {
-    elementValue[i] = getRandomA(10, 100).toFixed(1);
-    if (elementValue[i]) {
-      console.log(elementValue[i]);
-      document.getElementById(`input-${i}`).value = elementValue[i];
-    }
+    const value = getRandomA(10, 95);
+    elementValues[i] = value;
+    document.getElementById(`input-${i}`).value = value;
   }
 }
 
-function generationHistograma() {
-  const histrograma = document.getElementById("histrograma");
-  histrograma.style.display = "block";
+//Função para gerar e exibir o histograma
+
+function generateHistogram() {
+  const histogramContainer = document.getElementById("histrograma");
+  histogramContainer.style.display = "block";
 
   for (let i = 1; i <= 32; i++) {
-    let valor = 0;
-    valor = elementValue[i] + 1;
-    console.log("valor: " + valor);
-    subColumnHistrograma = document.getElementById(`sub-value${i}`);
-    subColumnHistrograma.style.height = valor + "%";
+    const value = parseFloat(elementValues[i] || 0); //Garante que o valor seja um número (ou 0)
 
-    columnHistograma = document.getElementById(`value-${i}`);
-    columnHistograma.style.height = "95%";
-    //columnHistograma.style.height = elementValue[i] + "%";
+    const subColumn = document.getElementById(`sub-value${i}`);
+    subColumn.style.height = (value + 3) + "%";
+
+    const mainColumn = document.getElementById(`value-${i}`);
+    mainColumn.style.height = 97 + "%";
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  valeuForm();
-});
+//Gera valores iniciais no carregamento da página
+document.addEventListener("DOMContentLoaded", populateInputs);
 
+//Gera histograma ao clicar no botão
 document
   .getElementById("generation")
-  .addEventListener("click", generationHistograma);
+  .addEventListener("click", generateHistogram);
 
-document.getElementById("baixar").addEventListener("click", () => {
-  const histrogramaDiv = document.querySelector(".histrograma");
+document.getElementById("download").addEventListener("click", () => {
+  const histrogramaDiv = document.querySelector(".download-img");
 
   html2canvas(histrogramaDiv).then((canvas) => {
     // Cria um link para download
