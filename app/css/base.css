@@ -1,0 +1,36 @@
+/*Redefinição de estilos, variáveis e estilos gerais.*/
+@import "layout.css";
+@import "variaveis.css";
+@import "componentes.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+h1,
+h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

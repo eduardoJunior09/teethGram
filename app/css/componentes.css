@@ -1,0 +1,85 @@
+/* Estilos dos componentes reutilizáveis (botões, cards, formulários, etc.).*/
+
+/*Botões*/
+button {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+/*Botões*/
+.container-botoes {
+  width: 70%;
+  height: auto;
+  margin: 20px auto;
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.botao {
+  width: 220px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+
+  color: var(--branco-neve);
+  background-color: var(--cor-destaque-principal);
+}
+
+.botao:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: var(--cor-destaque-hover);
+  transform: scale(1.1);
+}
+
+.botao-gerar-input {
+  margin-bottom: 1rem;
+}
+
+/*Inputs*/
+
+/*Formulário*/
+.container-info-dente {
+  width: 100%;
+  height: auto;
+}
+
+.input-info-dente {
+  width: 100%;
+  height: 30px;
+  padding: 0.2rem;
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  background-color: transparent;
+  color: var(--cinza-escuro);
+  border-radius: 2px;
+  border: 2px solid var(--cinza-escuro);
+  outline: none;
+
+  transition: 0.2s ease-in-out;
+}
+
+.label-info-dente {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.input-info-dente:focus {
+  border-color: var(--cor-destaque-principal);
+}
+
+.msg-campusC {
+  display: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--vermelho-erro);
+}
