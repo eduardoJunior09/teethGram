@@ -1,7 +1,5 @@
 /*Redefinição de estilos, variáveis e estilos gerais.*/
-@import "layout.css";
 @import "variaveis.css";
-@import "componentes.css";
 
 * {
   margin: 0;

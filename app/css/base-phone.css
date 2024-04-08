@@ -1,0 +1,36 @@
+@media (max-width: 800px) {
+  @import "variaveis.css";
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #333;
+  }
+
+  h1,
+  h2 {
+    font-size: 6vw;
+    margin: 0;
+  }
+
+  p {
+    font-size: 4vw;
+    margin-bottom: 1vw;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}

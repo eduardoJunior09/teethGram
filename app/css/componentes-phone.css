@@ -1,0 +1,92 @@
+@media (max-width: 800px) {
+
+  /*Botões*/
+  button {
+    font-size: 4vw;
+   
+  }
+
+  /*Botões Home*/
+  .box-button {
+    flex-direction: column;
+    gap: 4vw;
+    padding: 1vw;
+  }
+
+  .button-block {
+    width: 100%;
+    padding: 1vw;
+    height: 10vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    border-radius: 1vw;
+  }
+
+  .botao:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: var(--var-cor4);
+  }
+
+  .botao-gerar-input {
+    margin-bottom: 1rem;
+  }
+
+  /*Botão Form*/
+
+  .box-button-form {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .button-form {
+    width: 100%;
+    max-width: 20rem;
+    padding: 0.8rem;
+    margin: 0 auto;
+    border: none;
+    border-radius: 0.3rem;
+    color: var(--var-cor1);
+    background-color: var(--var-cor3);
+  }
+
+  /*Inputs*/
+
+  /*Formulário*/
+  .container-info-dente {
+    width: 100%;
+    height: auto;
+  }
+
+  .input-form {
+    width: 100%;
+    padding: 0.3rem;
+    font-size: 1rem;
+    outline: none;
+    border-radius: 0.3rem;
+    border: 2px solid var(--var-cor5);
+    color: var(--var-cor5);
+    background-color: transparent;
+    transition: 0.2s ease-in-out;
+  }
+
+  .label-form {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 5px 0;
+  }
+
+  .input-form:focus {
+    border-color: var(--var-cor3);
+  }
+
+  .msg-campusC {
+    display: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--var-cor6);
+  }
+
+}

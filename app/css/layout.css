@@ -12,13 +12,13 @@ header {
 }
 
 main {
-  width: 90vw;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
 }
 
 /*Texto de apresentação*/
-main .home {
+main .block {
   text-align: center;
 }
 
