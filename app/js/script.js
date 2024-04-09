@@ -2,7 +2,7 @@
 const dentesPermanentesBTN = document.getElementById("dentes-permanentes");
 const dentesDecicuosBTN = document.getElementById("dentes-deciduos");
 
-const secaoDente = document.getElementById("secao-dente");
+const secaoDente = document.getElementById("box-data");
 const tituloSecao = document.getElementById("titulo-secao");
 const resetSecao = document.getElementById("resetar-secao");
 

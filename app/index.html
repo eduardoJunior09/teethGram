@@ -7,20 +7,19 @@
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/mobile.css" />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-  </head>
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <header>
       <h1>TeethGram</h1>
     </header>
     <main>
-      <section class="apresentacao">
+      <section class="home">
         <h2>Título</h2>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo
@@ -29,48 +28,48 @@
           exercitationem! Veritatis repudiandae eveniet enim officiis, in quo?
         </p>
 
-        <div class="container-botoes">
-          <button id="dentes-permanentes" class="botao botao-home">
+        <div class="box-button">
+          <button id="dentes-permanentes" class="botao button-home">
             Dentes Permanentes (CPO-D)
           </button>
-          <button id="dentes-deciduos" class="botao botao-home">
+          <button id="dentes-deciduos" class="botao button-home">
             Dentes Decíduos (ceo-d)
           </button>
         </div>
       </section>
 
-      <section id="secao-dente" class="secao-dente">
-
-       <section class="secao-dente-intro">
+      <section id="box-data" class="box-data">
         <h2 id="titulo-secao">Título</h2>
-        <i class="fa fa-repeat" aria-hidden="true" id="resetar-secao"></i>
-       </section>
-        
+
         <!--Nome da seção será de acordo com o que o usuário escolher, para reutilizar cód-->
-        
-        <section class="secao-dados">
-          <div class="container-info-dente">
-            <p class="label-info-dente">Título da Pesquisa</p>
+
+        <!--Seção com o form-->
+        <section class="data-form">
+          <!--Nome-->
+          <div class="box-form">
+            <p class="label-form">Título da Pesquisa</p>
             <input
               type="text"
               placeholder="Digite aqui"
-              class="input-info-dente"
+              class="input-form"
               id="nome-dente"
             />
           </div>
-          <div class="container-info-dente">
-            <p class="label-info-dente">Entrevistados</p>
+          <!--Pessoas-->
+          <div class="box-form">
+            <p class="label-form">Entrevistados</p>
             <input
               type="number"
               placeholder="Digite aqui"
-              class="input-info-dente"
+              class="input-form"
               id="valor-amostral"
             />
           </div>
-          <div class="container-info-dente">
-            <p class="label-info-dente">Índice</p>
+          <!--Select-->
+          <div class="box-form">
+            <p class="label-form">Índice</p>
             <select
-              class="input-info-dente"
+              class="input-form"
               name="indice-entrada"
               id="indice-entrada"
             >
@@ -80,10 +79,13 @@
           </div>
           <span class="msg-campusC">Preencha todos os campos</span>
         </section>
-        <section class="container-botoes">
-          <button id="botao-gerar-input" class="botao botao-gerar-input">Gerar Input</button>
+
+        <section class="box-button-form">
+          <button id="button-form" class="button-form botao">
+            Gerar Input
+          </button>
         </section>
-        <p class="titulo-input">Preencha os campos abaixo:</p>
+    
       </section>
     </main>
     <script src="js/script.js"></script>

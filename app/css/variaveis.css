@@ -1,8 +1,8 @@
 :root {
-  --branco-neve: #ffffff;
-  --branco-fundo: #ebebebc7;
-  --cor-destaque-principal: #105dec;
-  --cor-destaque-hover:#0c46b3; 
-  --cinza-escuro: #333;
-  --vermelho-erro: #ff0000; 
+  --var-cor1: #ffffff;
+  --var-cor2: #ebebebc7;
+  --var-cor3: #105dec;
+  --var-cor4:#0c46b3; 
+  --var-cor5: #333;
+  --var-cor6: #ff0000; 
 }

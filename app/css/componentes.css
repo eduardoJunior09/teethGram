@@ -2,44 +2,62 @@
 
 /*Botões*/
 button {
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 500;
   text-align: center;
   cursor: pointer;
   transition: 0.5s ease-in-out;
 }
 
-/*Botões*/
-.container-botoes {
-  width: 70%;
-  height: auto;
-  margin: 20px auto;
+/*Botões Home*/
+.box-button {
+  width: 100%;
   padding: 1rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
-.botao {
-  width: 220px;
-  height: 50px;
+.button-home {
+  width: 100%;
+  max-width: 20rem;
+  padding: 0.8rem;
+  margin: 0 auto;
   border: none;
-  border-radius: 5px;
-
-  color: var(--branco-neve);
-  background-color: var(--cor-destaque-principal);
+  border-radius: 0.3rem;
+  color: var(--var-cor1);
+  background-color: var(--var-cor3);
 }
 
 .botao:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background-color: var(--cor-destaque-hover);
-  transform: scale(1.1);
+  background-color: var(--var-cor4);
 }
 
 .botao-gerar-input {
   margin-bottom: 1rem;
+}
+
+/*Botão Form*/
+
+.box-button-form {
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.button-form {
+  width: 100%;
+  max-width: 20rem;
+  padding: 0.8rem;
+  margin: 0 auto;
+  border: none;
+  border-radius: 0.3rem;
+  color: var(--var-cor1);
+  background-color: var(--var-cor3);
 }
 
 /*Inputs*/
@@ -50,36 +68,31 @@ button {
   height: auto;
 }
 
-.input-info-dente {
+.input-form {
   width: 100%;
-  height: 30px;
-  padding: 0.2rem;
-
+  padding: 0.3rem;
   font-size: 1rem;
-  font-weight: 500;
-
-  background-color: transparent;
-  color: var(--cinza-escuro);
-  border-radius: 2px;
-  border: 2px solid var(--cinza-escuro);
   outline: none;
-
+  border-radius: 0.3rem;
+  border: 2px solid var(--var-cor5);
+  color: var(--var-cor5);
+  background-color: transparent;
   transition: 0.2s ease-in-out;
 }
 
-.label-info-dente {
+.label-form {
   font-size: 1rem;
   font-weight: 600;
   margin: 5px 0;
 }
 
-.input-info-dente:focus {
-  border-color: var(--cor-destaque-principal);
+.input-form:focus {
+  border-color: var(--var-cor3);
 }
 
 .msg-campusC {
   display: none;
   font-size: 1rem;
   font-weight: 500;
-  color: var(--vermelho-erro);
+  color: var(--var-cor6);
 }

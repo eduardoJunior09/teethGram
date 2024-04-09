@@ -4,62 +4,38 @@
 
 header {
   width: 100vw;
-  height: 60px;
-  padding: 0.5rem;
+  padding: 1rem;
   text-align: center;
-
+  background-color: var(--var-cor3);
+  color: var(--var-cor1);
   box-shadow: rgba(0, 0, 0, 0.397) 0px 4px 12px;
-  background-color: var(--cor-destaque-principal);
-  color: var(--branco-neve);
 }
 
 main {
-  width: 90%;
+  width: 90vw;
   margin: 0 auto;
   padding: 2rem;
 }
 
 /*Texto de apresentação*/
-.apresentacao {
-  text-align: justify;
+main .home {
+  text-align: center;
 }
 
-/*Seção: Dentes Permanentes Variando*/
-.secao-dente {
+/*Seção Form*/
+.box-data{
   width: 100%;
-  height: auto;
-  margin: 10px auto;
   padding: 1rem;
-
+  margin: 1rem auto;
   border-radius: 5px;
-  border-left: 2px solid var(--cor-destaque-principal);
-
-  background-color: var(--branco-fundo);
+  border-left: 2px solid var(--var-cor3);
+  background-color: var(--var-cor2);
   box-shadow: rgba(0, 0, 0, 0.226) 1.95px 1.95px 2.6px;
-
-  display: block;
-}
-
-.secao-dente-intro {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 10px;
-  gap: 10px;
-}
-
-.secao-dente-intro h2 {
-  font-size: 2rem;
-  margin-bottom: 5px;
-}
-
-.fa-repeat {
-  font-size: 1rem;
-  cursor: pointer;
+  display: none;
 }
 
 /*Seção Formulário*/
-.secao-dados {
+.data-form {
   width: 100%;
   height: auto;
   margin: 1rem auto;
@@ -68,12 +44,4 @@ main {
   grid-template-columns: 2fr 1fr 1fr;
   gap: 10px;
 }
-.titulo-input {
-  font-size: 1.3rem;
-  margin-left: 20px;
-}
-.legenda-input {
-  font-size: 0.8rem;
-  text-align: right;
-  margin-right: 10px;
-}
+
