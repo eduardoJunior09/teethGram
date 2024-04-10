@@ -16,12 +16,12 @@ body {
 
 h1,
 h2 {
-  font-size: clamp(1.5em, 1em + 3vw, 2.5em);
+  font-size: 2rem;
   margin: 0;
 }
 
 p {
-  font-size: clamp(0.8em, 1em + 1vw, 1.25em);
+  font-size: 1rem; 
   margin-bottom: 1rem;
 }
 
@@ -32,4 +32,9 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+span{ 
+  font-size: 1rem;
+  font-weight: 500;
 }

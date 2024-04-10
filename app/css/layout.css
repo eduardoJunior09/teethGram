@@ -3,7 +3,7 @@
 /*Estilização header*/
 
 header {
-  width: 100vw;
+  width: 100%;
   padding: 1rem;
   text-align: center;
   background-color: var(--var-cor3);

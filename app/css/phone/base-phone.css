@@ -25,12 +25,7 @@
     margin-bottom: 1vw;
   }
 
-  a {
-    color: #000;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
+  span{ 
+    font-size: 4vw;
   }
 }

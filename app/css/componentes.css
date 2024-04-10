@@ -29,16 +29,12 @@ button {
   background-color: var(--var-cor3);
 }
 
-.botao:hover {
+.button-hover:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background-color: var(--var-cor4);
 }
 
-.botao-gerar-input {
-  margin-bottom: 1rem;
-}
-
-/*Botão Form*/
+/*Botão Formulario*/
 
 .box-button-form {
   width: 100%;
@@ -62,11 +58,6 @@ button {
 /*Inputs*/
 
 /*Formulário*/
-.container-info-dente {
-  width: 100%;
-  height: auto;
-}
-
 .input-form {
   width: 100%;
   padding: 0.3rem;
@@ -79,19 +70,11 @@ button {
   transition: 0.2s ease-in-out;
 }
 
-.label-form {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 5px 0;
+.msg-campusC {
+  display: none;
+  color: var(--var-cor6);
 }
 
 .input-form:focus {
   border-color: var(--var-cor3);
-}
-
-.msg-campusC {
-  display: none;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--var-cor6);
 }
