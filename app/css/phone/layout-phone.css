@@ -21,4 +21,30 @@
     grid-template-columns: 1fr;
     gap: 2vw;
   }
+
+  .box-input {
+    max-width: 95vw;
+    margin: 1vw auto;
+    padding: 1vw;
+  }
+
+  .box-input-section {
+    padding: 4vw 0;
+  }
+
+  .input-block {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5vw;
+    width: 50vw;
+    padding: 0.5vw;
+    margin: 4vw auto;
+  }
+
+  .title-quadrante {
+    margin-top: 4vw;
+    padding: 4vw;
+    font-size: 4vw;
+    text-align: center;
+  }
+  
 }

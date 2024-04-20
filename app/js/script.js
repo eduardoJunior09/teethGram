@@ -1,55 +1,73 @@
-//Variáveis manipulação do DOM na home
-const dentesPermanentesBTN = document.getElementById("dentes-permanentes");
-const dentesDecicuosBTN = document.getElementById("dentes-deciduos");
+import { gerarInputHtml } from "./inputAmostral.js";
 
+import { gerarInputHtmlMult } from "./inputMultivalorado.js"
+
+// Variáveis de manipulação do DOM na tela inicial
+const permanenteBtn = document.getElementById("dentes-permanentes");
+const deciduoBtn = document.getElementById("dentes-deciduos");
 const secaoDente = document.getElementById("box-data");
 const tituloSecao = document.getElementById("titulo-secao");
-const resetSecao = document.getElementById("resetar-secao");
+const resetBtn = document.getElementById("resetar-secao");
 
-//Variáveis manipulação do DOM na seção de form e input
-const btnGerarInput = document.getElementById("botao-gerar-input");
+// Variáveis de manipulação do DOM na seção de formulário e entrada
+const gerarInputBtn = document.getElementById("button-form");
+const nomeDenteInput = document.getElementById("nome-dente");
+const valorAmostralInput = document.getElementById("valor-amostral");
 const selectElement = document.getElementById("indice-entrada");
+const boxInputSection = document.getElementById("box-input-section");
 
-function cadastrarOption(x) {
-  const optionToRemove = selectElement.options[1]; // Remove a segunda opção
-  optionToRemove.remove();
-  const newOption = document.createElement("option");
+//Variáveis Globais
+var secao = null;
 
-  if (x === 1) {
-    newOption.text = "CPO";
-    newOption.value = "cpo";
-  } else if (x === 2) {
-    newOption.text = "ceo";
-    newOption.value = "ceo";
-  }
+// Função para adicionar ou remover opções do select
+function manipularOpcoesSelect(texto, valor) {
+  const novaOpcao = new Option(texto, valor);
+  const opcaoPadrao = new Option("Amostral", "amostral"); // Opção padrão do sistema
 
-  selectElement.append(newOption);
+  selectElement.innerHTML = ""; // Limpa todas as opções
+  selectElement.add(opcaoPadrao); // Adiciona opção padrão
+  selectElement.add(novaOpcao); // Adiciona a nova opção
 }
 
-/* Manipulação do DOM, captura dos eventos nos botões da tela home */
-dentesPermanentesBTN.addEventListener("click", () => {
-  tituloSecao.innerHTML = "Dentes Permantes";
-  cadastrarOption(1);
+// Eventos na tela inicial
+permanenteBtn.addEventListener("click", () => {
+  tituloSecao.innerHTML = "Dentes Permanentes";
+  manipularOpcoesSelect("CPO", "cpo");
   secaoDente.style.display = "block";
+  secao = "cpo";
 });
 
-dentesDecicuosBTN.addEventListener("click", () => {
+deciduoBtn.addEventListener("click", () => {
   tituloSecao.innerHTML = "Dentes Decíduos";
-  cadastrarOption(2);
+  manipularOpcoesSelect("CEO", "ceo");
   secaoDente.style.display = "block";
+  secao = "ceo";
 });
 
-/* Manipulação do DOM, captura dos eventos nos botões da seção form e input */
-//criar uma estrutura de verificação para verificar as opções escolhidas pelo usuário, a fim  de prosseguir para o proximo passo.
-
-btnGerarInput.addEventListener("click", () => {
-  const tituloValue = document.getElementById("nome-dente").value;
-  const entrevistadosValue = document.getElementById("valor-amostral").value;
+// Eventos na seção de formulário e entrada
+gerarInputBtn.addEventListener("click", () => {
+  boxInputSection.style.display = "block";
+  const tituloValue = nomeDenteInput.value;
+  const entrevistadosValue = valorAmostralInput.value;
   const optionValue = selectElement.value;
 
-  console.log(tituloValue + " - " + entrevistadosValue + " - " + optionValue);
+  if (secao === "cpo") {
+    if (optionValue === "amostral") {
+      gerarInputHtml(secao);
+    } else if (optionValue === "cpo") {
+      gerarInputHtmlMult(secao);
+    }
+  } else if (secao === "ceo") {
+    if (optionValue === "amostral") {
+      gerarInputHtml(secao);
+    } else if (optionValue === "ceo") {
+      gerarInputHtmlMult(secao);
+    }
+  }
 });
 
-resetSecao.addEventListener("click", () => {
+/*
+resetBtn.addEventListener("click", () => {
   console.log("RESET");
 });
+*/

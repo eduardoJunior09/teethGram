@@ -17,7 +17,8 @@
     margin: 3vw auto;
   }
 
-  .button-block, .button-form {
+  .button-block,
+  .button-form {
     max-width: 100vw;
     height: 10vw;
     padding: 1vw;
@@ -33,11 +34,62 @@
   .box-form {
     max-width: 89vw;
   }
+
   .input-form {
-    width: 90vw;
+    width: 88vw;
     padding: 1vw;
     font-size: 4vw;
     border-radius: 1vw;
     border: 0.6vw solid var(--var-cor5);
+  }
+
+  .input-section {
+    width: 20vw;
+    height: 5vh;
+  }
+  .input-section label {
+    padding: 0.5vw;
+    width: 10vw;
+  }
+  .input-section label,
+  input {
+    font-size: 4vw;
+  }
+
+  .input-section input {
+    width: 10vw;
+  }
+
+  .mult-values {
+    grid-template-columns: 1fr;
+    gap: 2vw;
+  }
+
+  .input-mult {
+    width: 30vw;
+    padding: 1vw;
+    padding-bottom: 2vw;
+  }
+
+  .title-input-mult {
+    padding: 1vw;
+    font-size: 4vw;
+  }
+
+  .value {
+    padding-right: 1vw;
+    flex-direction: row;
+  }
+
+  .value label {
+    width: 10vw;
+    font-size: 4vw;
+  }
+  .value input {
+    font-size: 4vw;
+  }
+
+  .value input {
+    padding: 1vw;
   }
 }

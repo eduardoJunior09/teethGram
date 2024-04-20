@@ -62,6 +62,7 @@ button {
   width: 100%;
   padding: 0.3rem;
   font-size: 1rem;
+  text-align: start;
   outline: none;
   border-radius: 0.3rem;
   border: 2px solid var(--var-cor5);
@@ -77,4 +78,90 @@ button {
 
 .input-form:focus {
   border-color: var(--var-cor3);
+}
+
+/*Input Dados*/
+.input-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 100%;
+  height: 30px;
+  background-color: var(--var-cor3);
+}
+
+.input-section label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--var-cor3);
+  color: var(--var-cor1);
+  width: 100%;
+}
+
+.input-section label,
+input {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.input-section input {
+  width: 100%;
+
+  outline: none;
+  border: none;
+  color: var(--var-cor5);
+  background-color: var(--var-cor1);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.input-mult {
+  width: 100%;
+  justify-self: center;
+  background-color: var(--var-cor3);
+  padding: 5px;
+}
+
+.title-input-mult {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+
+  color: var(--var-cor1);
+}
+.input-block-width{
+  width: 100%;
+}
+.mult-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+.value {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.value label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--var-cor1);
+ 
+}
+
+.value label,
+input {
+  font-size: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.value input {
+  border: none;
+  outline: none;
+  padding: 0.4rem;
 }

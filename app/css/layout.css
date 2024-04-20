@@ -23,7 +23,7 @@ main .block {
 }
 
 /*Seção Form*/
-.box-data{
+.box-data {
   width: 100%;
   padding: 1rem;
   margin: 1rem auto;
@@ -45,3 +45,35 @@ main .block {
   gap: 10px;
 }
 
+/*Seção Input (Dados do usuário)*/
+.box-input {
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.box-input-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: none;
+  padding: 1rem 0;
+}
+
+.input-block {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+  padding: 1rem;
+  margin: 1rem auto;
+}
+
+.title-quadrante {
+  margin-top: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
