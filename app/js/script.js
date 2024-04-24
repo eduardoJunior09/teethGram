@@ -1,6 +1,6 @@
 import { gerarInputHtml } from "./inputAmostral.js";
-
 import { gerarInputHtmlMult } from "./inputMultivalorado.js"
+import { CPO_D, CEO_D } from "./data_structures/IndexesData.js";
 
 // Variáveis de manipulação do DOM na tela inicial
 const permanenteBtn = document.getElementById("dentes-permanentes");
@@ -71,3 +71,9 @@ resetBtn.addEventListener("click", () => {
   console.log("RESET");
 });
 */
+
+
+let ceo_d = new CEO_D();
+
+
+
