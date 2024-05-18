@@ -20,18 +20,22 @@ button {
 
 .button-block {
   width: 100%;
+  font-weight: 600;
   padding: 0.8rem;
   margin-left: 10px;
   margin-right: 10px;
   border: none;
   border-radius: 0.3rem;
-  color: var(--var-cor1);
-  background-color: var(--var-cor3);
+  color: var(--var-cor3);
+  background: var(--var-cor1);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ 
 }
 
 .button-hover:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background-color: var(--var-cor4);
+  background-color: var(--var-cor7);
+  color: var(--var-cor1);
 }
 
 /*Botão Formulario*/

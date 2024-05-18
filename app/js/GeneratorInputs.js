@@ -1,28 +1,52 @@
-const blocoTop = document.getElementById("input-block-top");
-const blocoBottom = document.getElementById("input-block-bottom");
+import { CPO_D, CEO_D } from "./data_structures/IndexesData.js";
+const blockTop = document.getElementById("input-block-top");
+const blockBottom = document.getElementById("input-block-bottom");
 
-export function gerarInputHtmlMult(secao) {
-  let quantInput = null;
-  let inputsBloco = null;
-  let labelDente = null;
-  let labelMult = null;
+export function createInputsByIndex(typeName) {
+  blockTop.innerHTML = "";
+  blockBottom.innerHTML = "";
 
-  blocoTop.innerHTML = "";
-  blocoBottom.innerHTML = "";
+  let dataList, indexFdiList;
 
-  if (secao === "cpo") {
-    quantInput = 32;
-    inputsBloco = 16;
-    labelDente = labelCPO();
-    labelMult = labelMultCPO();
-  } else if (secao === "ceo") {
-    quantInput = 20;
-    inputsBloco = 10;
-    labelDente = labelCEO();
-    labelMult = labelMultCEO();
+  if (typeName === "cpo") {
+    ({ dataList, indexFdiList } = new CPO_D());
+  } else if (typeName === "ceo") {
+    ({ dataList, indexFdiList } = new CEO_D());
   }
 
-  inputAmostral(quantInput, inputsBloco, labelDente, labelMult);
+  createInputs(dataList, indexFdiList);
+}
+
+function createInputs(dataList, indexFdiList) {
+  for (let i = 0; i < dataList.length; i++) {
+    // crianção da div
+    const inputSection = document.createElement("div");
+    inputSection.classList.add("input-section");
+
+    //criação do label
+    const label = document.createElement("label");
+    label.classList.add("label-name");
+    label.textContent = indexFdiList[i];
+    inputSection.appendChild(label);
+
+    //criação do input(number)
+    const input = document.createElement("input");
+    input.type = "number";
+    inputSection.appendChild(input);
+
+    // divição dos inputs por grupos (Superior e Inferior)
+    if (i < dataList.length / 2) {
+      blockTop.appendChild(inputSection);
+    } else {
+      blockBottom.appendChild(inputSection);
+    }
+  }
+}
+
+
+/*
+
+ inputAmostral(quantInput, inputsBloco, labelDente, labelMult);
 }
 
 function inputAmostral(quantInput, inputsBloco, labelDente, labelMult) {
@@ -88,71 +112,5 @@ function inputAmostral(quantInput, inputsBloco, labelDente, labelMult) {
   }
 }
 
-function labelMultCPO() {
-  return ["C", "P", "O"];
-}
-function labelMultCEO() {
- return ["C", "E", "O"];
-}
 
-function labelCPO() {
-  return [
-    "18",
-    "17",
-    "16",
-    "15",
-    "14",
-    "13",
-    "12",
-    "11",
-    "21",
-    "22",
-    "23",
-    "24",
-    "25",
-    "26",
-    "27",
-    "28",
-    "48",
-    "47",
-    "46",
-    "45",
-    "44",
-    "43",
-    "42",
-    "41",
-    "31",
-    "32",
-    "33",
-    "34",
-    "35",
-    "36",
-    "37",
-    "38",
-  ];
-}
-
-function labelCEO() {
-  return [
-    "55",
-    "54",
-    "53",
-    "52",
-    "51",
-    "61",
-    "62",
-    "63",
-    "64",
-    "65",
-    "75",
-    "74",
-    "73",
-    "72",
-    "71",
-    "81",
-    "82",
-    "83",
-    "84",
-    "85",
-  ];
-}
+ */

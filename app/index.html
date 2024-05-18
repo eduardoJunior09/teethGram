@@ -21,11 +21,8 @@
   </head>
   <body>
     <header>
-      <h1>TeethGram</h1>
-    </header>
-    <main>
-      <section class="block">
-        <h2>Título</h2>
+      <div class="header-text">
+        <h1>TeethGram</h1>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo
           temporibus corporis reiciendis distinctio porro architecto
@@ -41,10 +38,15 @@
             Dentes Decíduos (ceo-d)
           </button>
         </div>
-      </section>
+      </div>
+      <div class="header-img">
+        <img src="img/img3.png" alt="imagem 3d">
+      </div>
+    </header>
 
+    <main>
       <section id="box-data" class="box-data">
-        <h2 id="titulo-secao">Título</h2>
+        <h2 id="titulo-secao"></h2>
 
         <!--Nome da seção será de acordo com o que o usuário escolher, para reutilizar cód-->
 
@@ -92,10 +94,23 @@
         </section>
 
         <section class="box-input">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
           <section class="box-input-section" id="box-input-section">
-            
+            <p>Abaixo informe os dados de acordo com os campos!</p>
+
+            <div class="toothClassificationBox">
+              <div class="box-form">
+                <p class="label-form">Classificação dos Dentes</p>
+                <select
+                  class="input-form"
+                  name="indice-entrada"
+                  id="toothClassification"
+                >
+                  <option value="fdi">FDI</option>
+                  <option value="ada">ADA</option>
+                </select>
+              </div>
+            </div>
+
             <div class="title-quadrante">
               <h4>Primeiro Quadrante (Superior)</h4>
             </div>
@@ -114,6 +129,9 @@
         </section>
       </section>
     </main>
+    <footer>
+      &copy; 2024 Feito em Jequié, Bahia
+    </footer>
     <script type="module" src="js/script.js"></script>
   </body>
 </html>

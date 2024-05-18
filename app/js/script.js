@@ -1,79 +1,78 @@
-import { gerarInputHtml } from "./inputAmostral.js";
-import { gerarInputHtmlMult } from "./inputMultivalorado.js"
-import { CPO_D, CEO_D } from "./data_structures/IndexesData.js";
+import { createInputsByIndex } from "./GeneratorInputs.js";
+import { createInputsByIndexMultiple } from "./MultipleInputGenerators.js";
+import { updateLabel } from "./LabelModifier.js";
 
 // Variáveis de manipulação do DOM na tela inicial
-const permanenteBtn = document.getElementById("dentes-permanentes");
-const deciduoBtn = document.getElementById("dentes-deciduos");
-const secaoDente = document.getElementById("box-data");
-const tituloSecao = document.getElementById("titulo-secao");
-const resetBtn = document.getElementById("resetar-secao");
+const cpoBtn = document.getElementById("dentes-permanentes");
+const ceoBtn = document.getElementById("dentes-deciduos");
+const toothSection = document.getElementById("box-data");
+const titleSection = document.getElementById("titulo-secao");
 
 // Variáveis de manipulação do DOM na seção de formulário e entrada
-const gerarInputBtn = document.getElementById("button-form");
-const nomeDenteInput = document.getElementById("nome-dente");
-const valorAmostralInput = document.getElementById("valor-amostral");
+const geberateInputBtn = document.getElementById("button-form");
+const nameForm = document.getElementById("nome-dente");
+const numberInterviewees = document.getElementById("valor-amostral");
 const selectElement = document.getElementById("indice-entrada");
 const boxInputSection = document.getElementById("box-input-section");
 
 //Variáveis Globais
-var secao = null;
+var typeName = null;
 
 // Função para adicionar ou remover opções do select
-function manipularOpcoesSelect(texto, valor) {
-  const novaOpcao = new Option(texto, valor);
-  const opcaoPadrao = new Option("Amostral", "amostral"); // Opção padrão do sistema
-
+function manipulateSelectOptions(optionText, optionValue) {
   selectElement.innerHTML = ""; // Limpa todas as opções
-  selectElement.add(opcaoPadrao); // Adiciona opção padrão
-  selectElement.add(novaOpcao); // Adiciona a nova opção
+
+  const newOption = new Option(optionValue, optionValue);
+  const defaultOption = new Option("Amostral", "amostral"); // Opção padrão do sistema
+  selectElement.add(defaultOption); // Adiciona opção padrão
+  selectElement.add(newOption); // Adiciona a nova opção
+}
+
+function updateSection(title, sectionValue, optionText, optionValue) {
+  titleSection.innerHTML = title;
+  manipulateSelectOptions(optionText, optionValue);
+  toothSection.style.display = "block";
+  typeName = sectionValue;
 }
 
 // Eventos na tela inicial
-permanenteBtn.addEventListener("click", () => {
-  tituloSecao.innerHTML = "Dentes Permanentes";
-  manipularOpcoesSelect("CPO", "cpo");
-  secaoDente.style.display = "block";
-  secao = "cpo";
-});
-
-deciduoBtn.addEventListener("click", () => {
-  tituloSecao.innerHTML = "Dentes Decíduos";
-  manipularOpcoesSelect("CEO", "ceo");
-  secaoDente.style.display = "block";
-  secao = "ceo";
-});
+cpoBtn.addEventListener("click", () =>
+  updateSection("Dentes Permanentes", "cpo", "CPO", "cpo")
+);
+ceoBtn.addEventListener("click", () =>
+  updateSection("Dentes Decíduos", "ceo", "CEO", "ceo")
+);
 
 // Eventos na seção de formulário e entrada
-gerarInputBtn.addEventListener("click", () => {
-  boxInputSection.style.display = "block";
-  const tituloValue = nomeDenteInput.value;
-  const entrevistadosValue = valorAmostralInput.value;
+geberateInputBtn.addEventListener("click", () => {
+  const tituloValue = nameForm.value;
+  const interviewees = numberInterviewees.value;
   const optionValue = selectElement.value;
 
-  if (secao === "cpo") {
-    if (optionValue === "amostral") {
-      gerarInputHtml(secao);
-    } else if (optionValue === "cpo") {
-      gerarInputHtmlMult(secao);
-    }
-  } else if (secao === "ceo") {
-    if (optionValue === "amostral") {
-      gerarInputHtml(secao);
-    } else if (optionValue === "ceo") {
-      gerarInputHtmlMult(secao);
-    }
+  if (!tituloValue || !interviewees) {
+    alert("Por favor, preencha todos os campos!");
+    return;
+  }
+
+  boxInputSection.style.display = "block";
+
+  if (optionValue === "amostral") {
+    console.log(typeName);
+    createInputsByIndex(typeName);
+  } else {
+    console.log(typeName);
+    createInputsByIndexMultiple(typeName);
   }
 });
 
-/*
-resetBtn.addEventListener("click", () => {
-  console.log("RESET");
+// Seleciona o elemento <select> pelo ID
+const selectElementTooth = document.getElementById("toothClassification");
+
+// Adiciona um ouvinte de evento para o evento 'change'
+selectElementTooth.addEventListener("change", (event) => {
+  // Obtém o valor da opção selecionada
+  const value = event.target.value;
+
+  updateLabel(value, typeName);
+
 });
-*/
-
-
-let ceo_d = new CEO_D();
-
-
-
