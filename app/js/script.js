@@ -13,7 +13,7 @@ const geberateInputBtn = document.getElementById("generate-input");
 const nameForm = document.getElementById("research-title");
 const numberInterviewees = document.getElementById("sample-size");
 const selectElement = document.getElementById("index-entry");
-const boxInputSection = document.getElementById("box-input-section");
+const boxInputSection = document.getElementById("input-container");
 
 //Variáveis Globais
 var typeName = null;

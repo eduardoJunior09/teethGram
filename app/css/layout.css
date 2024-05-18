@@ -83,12 +83,12 @@ main {
 }
 
 /*Seção Input (Dados do usuário)*/
-.box-input {
+.container-section {
   width: 100%;
   margin: 1rem auto;
 }
 
-.box-input-section {
+.input-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,7 +108,7 @@ main {
   margin: 1rem auto;
 }
 
-.title-quadrante {
+.quadrant-title {
   margin-top: 1rem;
   padding: 1rem;
   font-size: 1rem;

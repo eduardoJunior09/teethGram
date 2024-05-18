@@ -52,13 +52,13 @@
     gap: 2vw;
   }
 
-  .box-input {
+  .container-section {
     max-width: 95vw;
     margin: 1vw auto;
     padding: 1vw;
   }
 
-  .box-input-section {
+  .input-container {
     padding: 4vw 0;
   }
 
@@ -70,7 +70,7 @@
     margin: 4vw auto;
   }
 
-  .title-quadrante {
+  .quadrant-title {
     margin-top: 4vw;
     padding: 4vw;
     font-size: 4vw;
