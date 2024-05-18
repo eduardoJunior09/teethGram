@@ -3,8 +3,8 @@ import { createInputsByIndexMultiple } from "./MultipleInputGenerators.js";
 import { updateLabel } from "./LabelModifier.js";
 
 // Variáveis de manipulação do DOM na tela inicial
-const cpoBtn = document.getElementById("dentes-permanentes");
-const ceoBtn = document.getElementById("dentes-deciduos");
+const cpoBtn = document.getElementById("permanent-teeth");
+const ceoBtn = document.getElementById("deciduous-teeth");
 const toothSection = document.getElementById("box-data");
 const titleSection = document.getElementById("titulo-secao");
 

@@ -9,25 +9,25 @@
     margin-bottom: 3vw;
   }
 
-  .header-text {
+  .header-content {
     width: 100vw;
     height: auto;
     padding: 2vw;
     margin-bottom: 1vw;
   }
 
-  .header-text h1 {
+  .header-content h1 {
     margin: 1.5vw 0;
   }
 
-  .header-img {
+  .header-image {
     width: 100vw;
     height: auto;
     padding: 1vw;
     margin-bottom: 2vw;
   }
   
-  .header-img img {
+  .header-image img {
     width: 50vw;
     height: auto;
   }

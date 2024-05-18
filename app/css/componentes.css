@@ -1,6 +1,6 @@
 /* Estilos dos componentes reutilizáveis (botões, cards, formulários, etc.).*/
 
-/*Botões*/
+/**************** BOTÕES ****************/
 button {
   font-size: 1rem;
   font-weight: 500;
@@ -8,8 +8,9 @@ button {
   cursor: pointer;
 }
 
-/*Botões Home*/
-.box-button {
+/********* Botões Home *********/
+
+.header-buttons {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +19,7 @@ button {
   padding: 1rem;
 }
 
-.button-block {
+.btn-primary {
   width: 100%;
   font-weight: 600;
   padding: 0.8rem;
@@ -29,16 +30,16 @@ button {
   color: var(--var-cor3);
   background: var(--var-cor1);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
- 
 }
 
-.button-hover:hover {
+.btn-hover-header:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background-color: var(--var-cor7);
   color: var(--var-cor1);
 }
 
-/*Botão Formulario*/
+
+/************ Botão Formulário ************/
 
 .box-button-form {
   width: 100%;
@@ -59,8 +60,16 @@ button {
   background-color: var(--var-cor3);
 }
 
-/*Inputs*/
+.button-hover:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: var(--var-cor4);
+  color: var(--var-cor1);
+}
 
+
+
+
+/**************** INPUTS ****************/
 /*Formulário*/
 .input-form {
   width: 100%;
@@ -136,7 +145,7 @@ input {
 
   color: var(--var-cor1);
 }
-.input-block-width{
+.input-block-width {
   width: 100%;
 }
 .mult-values {
@@ -154,7 +163,6 @@ input {
   justify-content: center;
   align-items: center;
   color: var(--var-cor1);
- 
 }
 
 .value label,
