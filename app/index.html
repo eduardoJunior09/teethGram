@@ -48,71 +48,73 @@
 
     <!--MAIN-->
     <main>
-      <section id="box-data" class="box-data">
-        <h2 id="titulo-secao"></h2>
-
-        <!--Nome da seção será de acordo com o que o usuário escolher, para reutilizar cód-->
-
-        <!--Seção com o form-->
+      <!--Seção Data-->
+      <section id="data-section" class="data-section">
+        <h2 id="section-title"></h2>
+        <!--Seção form informações-->
         <section class="data-form">
           <!--Nome-->
-          <div class="box-form">
-            <p class="label-form">Título da Pesquisa</p>
+          <div class="form-group">
+            <p class="form-label">Título da Pesquisa</p>
             <input
               type="text"
               placeholder="Digite aqui"
-              class="input-form"
-              id="nome-dente"
+              class="form-input"
+              id="research-title"
             />
           </div>
+          <!--Nome-->
           <!--Pessoas-->
-          <div class="box-form">
-            <p class="label-form">Entrevistados</p>
+          <div class="form-group">
+            <p class="form-label">Entrevistados</p>
             <input
               type="number"
               placeholder="Digite aqui"
-              class="input-form"
-              id="valor-amostral"
+              class="form-input"
+              id="sample-size"
             />
           </div>
+          <!--Pessoas-->
           <!--Select-->
-          <div class="box-form">
-            <p class="label-form">Índice</p>
-            <select
-              class="input-form"
-              name="indice-entrada"
-              id="indice-entrada"
-            >
+          <div class="form-group">
+            <p class="form-label">Índice</p>
+            <select class="form-input" name="index-entry" id="index-entry">
               <option value="amostral">Amostral</option>
               <option value="definir">definir</option>
             </select>
           </div>
-          <span class="msg-campusC">Preencha todos os campos</span>
+          <span class="form-message">Preencha todos os campos</span>
         </section>
+        <!--Select-->
+        <!--Seção form informações-->
 
-        <section class="box-button-form">
-          <button id="button-form" class="button-form button-hover">
+        <!--Botão Formulário-->
+        <section class="form-buttons">
+          <button id="generate-input" class="btn-secondary btn-hover-form">
             Gerar Input
           </button>
         </section>
+        <!--Botão Formulário-->
 
         <section class="box-input">
           <section class="box-input-section" id="box-input-section">
             <p>Abaixo informe os dados de acordo com os campos!</p>
 
-            <div class="toothClassificationBox">
-              <div class="box-form">
-                <p class="label-form">Classificação dos Dentes</p>
+            <!--Select ADA/FDI-->
+            <div class="tooth-classification">
+              <div class="form-group">
+                <p class="form-label">Classificação dos Dentes</p>
                 <select
-                  class="input-form"
-                  name="indice-entrada"
-                  id="toothClassification"
+                  class="form-input"
+                  name="tooth-classification"
+                  id="tooth-classification"
                 >
                   <option value="fdi">FDI</option>
                   <option value="ada">ADA</option>
                 </select>
               </div>
             </div>
+            <!--Select ADA/FDI-->
 
             <div class="title-quadrante">
               <h4>Primeiro Quadrante (Superior)</h4>
@@ -131,8 +133,9 @@
           </section>
         </section>
       </section>
+      <!--Seção Data-->
     </main>
-     <!--MAIN-->
+    <!--MAIN-->
     <footer>&copy; 2024 Feito em Jequié, Bahia</footer>
     <script type="module" src="js/script.js"></script>
   </body>

@@ -5,14 +5,14 @@ import { updateLabel } from "./LabelModifier.js";
 // Variáveis de manipulação do DOM na tela inicial
 const cpoBtn = document.getElementById("permanent-teeth");
 const ceoBtn = document.getElementById("deciduous-teeth");
-const toothSection = document.getElementById("box-data");
-const titleSection = document.getElementById("titulo-secao");
+const toothSection = document.getElementById("data-section");
+const titleSection = document.getElementById("section-title");
 
 // Variáveis de manipulação do DOM na seção de formulário e entrada
-const geberateInputBtn = document.getElementById("button-form");
-const nameForm = document.getElementById("nome-dente");
-const numberInterviewees = document.getElementById("valor-amostral");
-const selectElement = document.getElementById("indice-entrada");
+const geberateInputBtn = document.getElementById("generate-input");
+const nameForm = document.getElementById("research-title");
+const numberInterviewees = document.getElementById("sample-size");
+const selectElement = document.getElementById("index-entry");
 const boxInputSection = document.getElementById("box-input-section");
 
 //Variáveis Globais
@@ -66,7 +66,7 @@ geberateInputBtn.addEventListener("click", () => {
 });
 
 // Seleciona o elemento <select> pelo ID
-const selectElementTooth = document.getElementById("toothClassification");
+const selectElementTooth = document.getElementById("tooth-classification");
 
 // Adiciona um ouvinte de evento para o evento 'change'
 selectElementTooth.addEventListener("change", (event) => {

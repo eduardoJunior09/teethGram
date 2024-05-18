@@ -60,7 +60,7 @@ main {
   padding: 2rem;
 }
 /*Seção Form*/
-.box-data {
+.data-section {
   width: 100%;
   padding: 1rem;
   margin: 1rem auto;
@@ -115,7 +115,7 @@ main {
   text-align: center;
 }
 
-.toothClassificationBox {
+.tooth-classification {
   margin-left: 75%;
   width: 20%;
 }

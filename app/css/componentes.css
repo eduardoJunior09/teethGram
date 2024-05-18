@@ -41,7 +41,7 @@ button {
 
 /************ Botão Formulário ************/
 
-.box-button-form {
+.form-buttons{
   width: 100%;
   padding: 1rem;
   margin: 1rem auto;
@@ -49,7 +49,7 @@ button {
   grid-template-columns: 1fr;
 }
 
-.button-form {
+.btn-secondary {
   width: 100%;
   max-width: 20rem;
   padding: 0.8rem;
@@ -60,7 +60,7 @@ button {
   background-color: var(--var-cor3);
 }
 
-.button-hover:hover {
+.btn-hover-form:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background-color: var(--var-cor4);
   color: var(--var-cor1);
@@ -71,7 +71,7 @@ button {
 
 /**************** INPUTS ****************/
 /*Formulário*/
-.input-form {
+.form-input {
   width: 100%;
   padding: 0.3rem;
   font-size: 1rem;
@@ -84,12 +84,12 @@ button {
   transition: 0.2s ease-in-out;
 }
 
-.msg-campusC {
+.form-message {
   display: none;
   color: var(--var-cor6);
 }
 
-.input-form:focus {
+.form-input:focus {
   border-color: var(--var-cor3);
 }
 

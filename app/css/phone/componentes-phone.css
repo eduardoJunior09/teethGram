@@ -24,8 +24,7 @@
     border-radius: 1vw;
   }
 
-  .box-button-form {
-    background-color: aquamarine;
+  .form-buttons {
     max-width: 100vw;
     padding: 0;
     margin: 3vw auto;
@@ -33,11 +32,11 @@
 
 
   /*INPUTS*/
-  .box-form {
+  .form-group{
     max-width: 89vw;
   }
 
-  .input-form {
+  .form-input{
     width: 88vw;
     padding: 1vw;
     font-size: 4vw;
