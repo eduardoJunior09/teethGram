@@ -6,9 +6,10 @@
 
   .header-buttons {
     flex-direction: column;
+    flex-wrap: nowrap;
     gap: 4vw;
     padding: 1vw;
-    margin: 3vw auto;
+    margin-top: 2vw;
   }
 
   .btn-primary {
@@ -17,7 +18,7 @@
   }
 
   .btn-primary,
-  .button-form {
+  .btn-secondary {
     max-width: 100vw;
     height: 10vw;
     padding: 1vw;
@@ -30,13 +31,13 @@
     margin: 3vw auto;
   }
 
-
   /*INPUTS*/
-  .form-group{
+  .form-group {
     max-width: 89vw;
+    margin-bottom: 1vw;
   }
 
-  .form-input{
+  .form-input {
     width: 88vw;
     padding: 1vw;
     font-size: 4vw;
@@ -46,7 +47,7 @@
 
   .input-section {
     width: 20vw;
-    height: 5vh;
+    height: 5vw;
   }
   .input-section label {
     padding: 0.5vw;

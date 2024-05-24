@@ -14,13 +14,17 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 1rem;
   width: 100%;
   padding: 1rem;
+  margin-top: 20px;
 }
 
 .btn-primary {
   width: 100%;
+  max-width: 270px;
+
   font-weight: 600;
   padding: 0.8rem;
   margin-left: 10px;
@@ -38,22 +42,19 @@ button {
   color: var(--var-cor1);
 }
 
-
 /************ Botão Formulário ************/
 
-.form-buttons{
-  width: 100%;
+.form-buttons {
   padding: 1rem;
   margin: 1rem auto;
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  justify-content: center;
 }
 
 .btn-secondary {
   width: 100%;
   max-width: 20rem;
   padding: 0.8rem;
-  margin: 0 auto;
   border: none;
   border-radius: 0.3rem;
   color: var(--var-cor1);
@@ -65,9 +66,6 @@ button {
   background-color: var(--var-cor4);
   color: var(--var-cor1);
 }
-
-
-
 
 /**************** INPUTS ****************/
 /*Formulário*/
@@ -82,6 +80,11 @@ button {
   color: var(--var-cor5);
   background-color: transparent;
   transition: 0.2s ease-in-out;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
 }
 
 .form-message {
@@ -120,7 +123,6 @@ input {
 
 .input-section input {
   width: 100%;
-
   outline: none;
   border: none;
   color: var(--var-cor5);

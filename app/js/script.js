@@ -15,6 +15,10 @@ const numberInterviewees = document.getElementById("sample-size");
 const selectElement = document.getElementById("index-entry");
 const boxInputSection = document.getElementById("input-container");
 
+const errorMessage = document.getElementById("form-message");
+
+
+
 //Variáveis Globais
 var typeName = null;
 
@@ -50,8 +54,10 @@ geberateInputBtn.addEventListener("click", () => {
   const optionValue = selectElement.value;
 
   if (!tituloValue || !interviewees) {
-    alert("Por favor, preencha todos os campos!");
+    errorMessage.style.display = "flex";
     return;
+  }else{
+    errorMessage.style.display = "none";
   }
 
   boxInputSection.style.display = "block";
