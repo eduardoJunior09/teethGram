@@ -50,51 +50,24 @@
     <main>
       <!--Seção Data-->
       <section id="data-section" class="data-section">
-        <h2 id="section-title"></h2>
-        <!--Seção form informações-->
-        <section class="data-form">
-          <!--Nome-->
-          <div class="form-group">
-            <p class="form-label">Título da Pesquisa</p>
-            <input
-              type="text"
-              placeholder="Digite aqui"
-              class="form-input"
-              id="research-title"
-            />
-          </div>
-          <!--Nome-->
-          <!--Pessoas-->
-          <div class="form-group">
-            <p class="form-label">Entrevistados</p>
-            <input
-              type="number"
-              placeholder="Digite aqui"
-              class="form-input"
-              id="sample-size"
-            />
-          </div>
-          <!--Pessoas-->
-          <!--Select-->
-          <div class="form-group">
-            <p class="form-label">Índice</p>
-            <select class="form-input" name="index-entry" id="index-entry">
-              <option value="amostral">Amostral</option>
-              <option value="definir">definir</option>
-            </select>
-          </div>
-          <span class="form-message" id="form-message">Preencha todos os campos</span>
-        </section>
-        <!--Select-->
-        <!--Seção form informações-->
-        <!--Botão Formulário-->
-        <section class="form-buttons">
-          <button id="generate-input" class="btn-secondary btn-hover-form">
-            Gerar Input
-          </button>
-        </section>
-        <!--Botão Formulário-->
+        <div class="container-main">
+          <h2 id="section-title"></h2>
+          <!--Seção form informações-->
+            <div class=" index-entry">
+              <p class="form-label">Índice</p>
+              <select class="form-input" name="index-entry" id="index-entry">
+                <option value="amostral">TOTAL</option>
+                <option value="definir">definir</option>
+              </select>
+            </div>
+          <!--Seção form informações-->
 
+          <!--Botão Formulário-->
+            <button id="generate-input" class="btn-secondary btn-hover-form">
+              Gerar Input
+            </button>
+          <!--Botão Formulário-->
+        </div>
         <!--Seção Input-->
         <section class="container-section">
           <!--Seção Input Zonas-->
@@ -116,19 +89,55 @@
             </div>
             <!--Select ADA/FDI-->
 
-             <!--Quadrantes-->
-            <div class="quadrant-title">
-              <h4>Primeiro Quadrante (Superior)</h4>
+            <div class="quadrant-form">
+              <!--Quadrantes-->
+              <div>
+                <div class="quadrant-title">
+                  <h4>Superiores</h4>
+                </div>
+                <div class="input-block input-block-top" id="input-block-top">
+                  <div class="quadrant-rl">
+                    <p>Direito</p>
+                    <div
+                      class="input-block-rl input-block-top-right"
+                      id="input-block-top-right"
+                    ></div>
+                  </div>
+                  <div class="quadrant-rl">
+                    <p>Esquerdo</p>
+                    <div
+                      class="input-block-rl input-block-top-left"
+                      id="input-block-top-left"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="quadrant-title">
+                  <h4>Inferiores</h4>
+                </div>
+                <div class="input-block input-block-bottom" id="input-block-bottom">
+                  <div class="quadrant-rl">
+                    <p>Direito</p>
+                    <div
+                      class="input-block-rl input-block-bottom-right"
+                      id="input-block-bottom-right"
+                    ></div>
+                  </div>
+                  <div class="quadrant-rl">
+                    <p>Esquerdo</p>
+                    <div
+                      class="input-block-rl input-block-bottom-left"
+                      id="input-block-bottom-left"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <!--Quadrantes-->
             </div>
 
-            <div class="input-block input-block-top" id="input-block-top"></div>
 
-            <div class="quadrant-title">
-              <h4>Segundo Quadrante (Inferior)</h4>
-            </div>
-
-            <div class="input-block input-block-bottom" id="input-block-bottom"></div>
-            <!--Quadrantes-->
           </section>
           <!--Seção Input Zonas-->
         </section>

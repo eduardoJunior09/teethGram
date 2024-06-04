@@ -10,12 +10,8 @@ const titleSection = document.getElementById("section-title");
 
 // Variáveis de manipulação do DOM na seção de formulário e entrada
 const geberateInputBtn = document.getElementById("generate-input");
-const nameForm = document.getElementById("research-title");
-const numberInterviewees = document.getElementById("sample-size");
 const selectElement = document.getElementById("index-entry");
 const boxInputSection = document.getElementById("input-container");
-
-const errorMessage = document.getElementById("form-message");
 
 
 
@@ -26,8 +22,8 @@ var typeName = null;
 function manipulateSelectOptions(optionText, optionValue) {
   selectElement.innerHTML = ""; // Limpa todas as opções
 
-  const newOption = new Option(optionValue, optionValue);
-  const defaultOption = new Option("Amostral", "amostral"); // Opção padrão do sistema
+  const newOption = new Option(optionText, optionValue);
+  const defaultOption = new Option("TOTAL", "total"); // Opção padrão do sistema
   selectElement.add(defaultOption); // Adiciona opção padrão
   selectElement.add(newOption); // Adiciona a nova opção
 }
@@ -41,28 +37,21 @@ function updateSection(title, sectionValue, optionText, optionValue) {
 
 // Eventos na tela inicial
 cpoBtn.addEventListener("click", () =>
-  updateSection("Dentes Permanentes", "cpo", "CPO", "cpo")
+  updateSection("Dentes Permanentes", "cpo", "TOTAL POR COMPENENTES (CPO)", "cpo")
 );
 ceoBtn.addEventListener("click", () =>
-  updateSection("Dentes Decíduos", "ceo", "CEO", "ceo")
+  updateSection("Dentes Decíduos", "ceo", "TOTAL POR COMPENENTES (ceo)", "ceo")
 );
 
 // Eventos na seção de formulário e entrada
 geberateInputBtn.addEventListener("click", () => {
-  const tituloValue = nameForm.value;
-  const interviewees = numberInterviewees.value;
+
   const optionValue = selectElement.value;
 
-  if (!tituloValue || !interviewees) {
-    errorMessage.style.display = "flex";
-    return;
-  }else{
-    errorMessage.style.display = "none";
-  }
-
+ 
   boxInputSection.style.display = "block";
 
-  if (optionValue === "amostral") {
+  if (optionValue === "total") {
     console.log(typeName);
     createInputsByIndex(typeName);
   } else {

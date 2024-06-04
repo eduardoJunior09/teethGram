@@ -1,10 +1,15 @@
 import { CPO_D, CEO_D } from "./data_structures/IndexesData.js";
-const blocoTop = document.getElementById("input-block-top");
-const blocoBottom = document.getElementById("input-block-bottom");
+
+const blockTopRight = document.getElementById("input-block-top-right");
+const blockTopLeft = document.getElementById("input-block-top-left");
+const blockBottomRight = document.getElementById("input-block-bottom-right");
+const blockBottomLeft = document.getElementById("input-block-bottom-left");
 
 export function createInputsByIndexMultiple(typeName) {
-  blocoTop.innerHTML = "";
-  blocoBottom.innerHTML = "";
+  blockTopRight.innerHTML =  " ";
+  blockTopLeft.innerHTML = " "; 
+  blockBottomRight.innerHTML = " ";
+  blockBottomLeft.innerHTML = " "; 
 
   let indexInstance;
 
@@ -36,10 +41,24 @@ function createInputs(indexInstance) {
 
     createMultivaluedValues(inputMultValues, triDataList[i]);
 
+    // divição dos inputs por grupos (Superior e Inferior)
     if (i < dataList.length / 2) {
-      blocoTop.appendChild(inputSection);
+      var dataListNumber = (dataList.length/2)/2; 
+
+      if(i<dataListNumber){ 
+        blockTopRight.appendChild(inputSection);
+      }else if(i => dataListNumber){ 
+        blockTopLeft.appendChild(inputSection);
+      }
+    
     } else {
-      blocoBottom.appendChild(inputSection);
+      var dataListNumber = (dataList.length * 75) / 100; 
+       
+      if(i<dataListNumber){
+        blockBottomRight.appendChild(inputSection);
+      }else if(i => dataListNumber){
+        blockBottomLeft.appendChild(inputSection);
+      }
     }
   }
 }

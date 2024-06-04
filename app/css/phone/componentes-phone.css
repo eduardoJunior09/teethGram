@@ -31,9 +31,26 @@
     margin: 3vw auto;
   }
 
+  .container-main button {
+    margin: 1vw 0;
+  }
+  
+
   /*INPUTS*/
   .form-group {
-    max-width: 89vw;
+    justify-content: center;
+    max-width: 100vw;
+    padding: 1vw;
+    margin-bottom: 0.5vw;
+  }
+
+  .index-entry {
+    margin: 2vw 0;
+    width: 90vw;
+  }
+
+  .index-entry p {
+    font-size: 4vw;
     margin-bottom: 1vw;
   }
 
@@ -46,7 +63,7 @@
   }
 
   .input-section {
-    width: 20vw;
+    width: 30vw;
     height: 5vw;
   }
   .input-section label {
@@ -59,7 +76,7 @@
   }
 
   .input-section input {
-    width: 10vw;
+    width: 20vw;
   }
 
   .mult-values {

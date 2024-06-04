@@ -85,11 +85,24 @@ button {
 .form-group {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
-.form-message {
-  display: none;
-  color: var(--var-cor6);
+.index-entry {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+  width: 30%;
+}
+
+.index-entry p {
+  font-size: 1.2rem;
+  font-weight: bolder;
+  margin-bottom: 0.5rem;
+}
+
+.container-main button {
+  margin: 1rem 0;
 }
 
 .form-input:focus {

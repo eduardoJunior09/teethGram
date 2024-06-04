@@ -47,14 +47,6 @@
     border-radius: 2vw;
     border-left: 1vw solid var(--var-cor3);
   }
-  .data-form {
-    max-width: 95vw;
-    height: auto;
-    margin: 1vw auto;
-    padding: 0.5vw;
-    grid-template-columns: 1fr;
-    gap: 2vw;
-  }
 
   .container-section {
     max-width: 95vw;
@@ -62,16 +54,35 @@
     padding: 1vw;
   }
 
+  .container-main {
+    width: 90vw;
+    align-items: start;
+  }
+
   .input-container {
     padding: 4vw 0;
   }
 
   .input-block {
-    grid-template-columns: repeat(2, 1fr);
     gap: 5vw;
-    width: 50vw;
+    width: 90vw;
     padding: 0.5vw;
-    margin: 4vw auto;
+  }
+
+  .quadrant-form {
+    grid-template-columns: 1fr;
+  }
+
+  .input-block-rl {
+    gap: 5vw;
+  }
+
+  .quadrant-rl {
+    padding: 0.5vw;
+  }
+
+  .quadrant-rl p {
+    margin: 2vw 0;
   }
 
   .quadrant-title {
@@ -83,7 +94,6 @@
 
   .tooth-classification {
     margin: 5vw 0;
-
     width: 90vw;
   }
 
