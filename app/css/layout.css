@@ -2,15 +2,20 @@
 
 /*Estilização header*/
 
+input[type='number']{
+  font-size: 16px;
+  padding: 4px;
+}
+
 header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 16px;
   width: 100%;
   height: auto;
-  padding: 1rem;
-  border-bottom-left-radius: 10rem;
+  padding: 16px;
+  border-bottom-left-radius: 160px;
   background: rgb(58, 127, 253);
   background: radial-gradient(
     circle,
@@ -21,14 +26,16 @@ header {
   box-shadow: rgba(0, 0, 0, 0.205) 0px 4px 12px;
 }
 
+
+
 .header-content {
   width: 100%;
   height: 100%;
-  padding: 1rem;
+  padding: 16px;
 }
 
 .header-content h1 {
-  margin: 2rem 0;
+  margin: 32px 0;
   font-weight: bold;
   letter-spacing: 1px;
 }
@@ -41,7 +48,7 @@ header {
 .header-image {
   width: 60%;
   height: 100%;
-  padding: 1rem;
+  padding: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,13 +65,13 @@ main {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 32px;
 }
 /*Seção Form*/
 .data-section {
   width: 100%;
-  padding: 1rem;
-  margin: 1rem auto;
+  padding: 16px;
+  margin: 16px auto;
   border-radius: 5px;
   border-left: 2px solid var(--var-cor3);
   background-color: var(--var-cor2);
@@ -85,7 +92,7 @@ main {
 /*Seção Input (Dados do usuário)*/
 .container-section {
   width: 100%;
-  margin: 1rem auto;
+  margin: 16px auto;
 }
 
 .input-container {
@@ -94,15 +101,17 @@ main {
   justify-content: center;
   flex-direction: column;
   display: none;
-  padding: 1rem 0;
+  padding: 16px 0;
 }
 
 .input-block {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
   width: 100%;
-  padding: 1rem;
+  height: auto;
+  padding: 16px;
 }
 
 .quadrant-form {
@@ -117,7 +126,8 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 1rem;
+  height: auto;
+  gap: 16px;
 }
 
 .quadrant-rl {
@@ -125,22 +135,29 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0.5rem;
+  padding: 8px;
 }
 
 .quadrant-rl p {
-  margin: 1rem 0;
+  margin: 16px 0;
 }
 .quadrant-title {
-  margin-top: 1rem;
-  padding: 1rem;
-  font-size: 1rem;
+  margin-top: 16px;
+  padding: 16px;
+  font-size: 16px;
   text-align: center;
 }
 
 .tooth-classification {
   margin-left: 75%;
   width: 20%;
+}
+
+.section-btn-histogram{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 0;
 }
 
 footer {

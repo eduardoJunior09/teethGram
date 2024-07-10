@@ -1,4 +1,9 @@
 @media (max-width: 800px) {
+  input[type='number']{
+    font-size: 7vw;
+    padding: 0;
+  }
+
   header {
     flex-direction: column-reverse;
     padding: 2vw;
@@ -67,14 +72,17 @@
     gap: 5vw;
     width: 90vw;
     padding: 0.5vw;
+    margin-bottom: 1vw;
   }
 
   .quadrant-form {
     grid-template-columns: 1fr;
+    margin-bottom: 10vw;
   }
 
   .input-block-rl {
     gap: 5vw;
+    margin-bottom: 2vw;
   }
 
   .quadrant-rl {
@@ -90,6 +98,10 @@
     padding: 4vw;
     font-size: 4vw;
     text-align: center;
+  }
+
+  .section-btn-histogram {
+    margin: 2vw 0;
   }
 
   .tooth-classification {

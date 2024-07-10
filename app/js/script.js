@@ -29,6 +29,7 @@ function manipulateSelectOptions(optionText, optionValue) {
 }
 
 function updateSection(title, sectionValue, optionText, optionValue) {
+  boxInputSection.style.display = "none";
   titleSection.innerHTML = title;
   manipulateSelectOptions(optionText, optionValue);
   toothSection.style.display = "block";

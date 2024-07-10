@@ -2,7 +2,7 @@
 
 /**************** BOTÕES ****************/
 button {
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 500;
   text-align: center;
   cursor: pointer;
@@ -15,22 +15,21 @@ button {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 16px;
   width: 100%;
-  padding: 1rem;
+  padding: 16px;
   margin-top: 20px;
 }
 
 .btn-primary {
   width: 100%;
   max-width: 270px;
-
   font-weight: 600;
-  padding: 0.8rem;
+  padding: 14px;
   margin-left: 10px;
   margin-right: 10px;
   border: none;
-  border-radius: 0.3rem;
+  border-radius: 5px;
   color: var(--var-cor3);
   background: var(--var-cor1);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -45,18 +44,18 @@ button {
 /************ Botão Formulário ************/
 
 .form-buttons {
-  padding: 1rem;
-  margin: 1rem auto;
+  padding: 16px;
+  margin: 16px auto;
   display: flex;
   justify-content: center;
 }
 
 .btn-secondary {
   width: 100%;
-  max-width: 20rem;
-  padding: 0.8rem;
+  max-width: 320px;
+  padding: 14px;
   border: none;
-  border-radius: 0.3rem;
+  border-radius: 5px;
   color: var(--var-cor1);
   background-color: var(--var-cor3);
 }
@@ -71,11 +70,10 @@ button {
 /*Formulário*/
 .form-input {
   width: 100%;
-  padding: 0.3rem;
-  font-size: 1rem;
+  padding: 5px;
   text-align: start;
   outline: none;
-  border-radius: 0.3rem;
+  border-radius: 5px;
   border: 2px solid var(--var-cor5);
   color: var(--var-cor5);
   background-color: transparent;
@@ -91,18 +89,18 @@ button {
 .index-entry {
   display: flex;
   flex-direction: column;
-  margin: 1rem 0;
+  margin: 16px 0;
   width: 30%;
+  font-size: 16px;
 }
 
 .index-entry p {
-  font-size: 1.2rem;
   font-weight: bolder;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 
 .container-main button {
-  margin: 1rem 0;
+  margin: 16px 0;
 }
 
 .form-input:focus {
@@ -130,7 +128,6 @@ button {
 .input-section label,
 input {
   text-align: center;
-  font-size: 1rem;
   font-weight: 500;
 }
 
@@ -154,8 +151,8 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.2rem;
-  font-size: 1rem;
+  padding: 4px;
+  font-size: 16px;
   font-weight: 500;
 
   color: var(--var-cor1);
@@ -171,6 +168,7 @@ input {
 .value {
   display: flex;
   flex-direction: column-reverse;
+  background-color: #0a3481;
 }
 
 .value label {
@@ -178,11 +176,11 @@ input {
   justify-content: center;
   align-items: center;
   color: var(--var-cor1);
+  font-size: 16px;
 }
 
 .value label,
 input {
-  font-size: 1rem;
   text-align: center;
   width: 100%;
 }
@@ -190,5 +188,4 @@ input {
 .value input {
   border: none;
   outline: none;
-  padding: 0.4rem;
 }
