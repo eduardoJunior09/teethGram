@@ -13,10 +13,9 @@ const geberateInputBtn = document.getElementById("generate-input");
 const selectElement = document.getElementById("index-entry");
 const boxInputSection = document.getElementById("input-container");
 
-
-
 //Variáveis Globais
 var typeName = null;
+var isButtonClicked = false;
 
 // Função para adicionar ou remover opções do select
 function manipulateSelectOptions(optionText, optionValue) {
@@ -38,7 +37,12 @@ function updateSection(title, sectionValue, optionText, optionValue) {
 
 // Eventos na tela inicial
 cpoBtn.addEventListener("click", () =>
-  updateSection("Dentes Permanentes", "cpo", "TOTAL POR COMPENENTES (CPO)", "cpo")
+  updateSection(
+    "Dentes Permanentes",
+    "cpo",
+    "TOTAL POR COMPENENTES (CPO)",
+    "cpo"
+  )
 );
 ceoBtn.addEventListener("click", () =>
   updateSection("Dentes Decíduos", "ceo", "TOTAL POR COMPENENTES (ceo)", "ceo")
@@ -46,10 +50,8 @@ ceoBtn.addEventListener("click", () =>
 
 // Eventos na seção de formulário e entrada
 geberateInputBtn.addEventListener("click", () => {
-
   const optionValue = selectElement.value;
 
- 
   boxInputSection.style.display = "block";
 
   if (optionValue === "total") {
@@ -59,6 +61,17 @@ geberateInputBtn.addEventListener("click", () => {
     console.log(typeName);
     createInputsByIndexMultiple(typeName);
   }
+
+  // Só reseta a classificação dos dentes para "FDI" a partir do segundo clique
+  if (isButtonClicked) {
+    const toothClassificationElement = document.getElementById(
+      "tooth-classification"
+    );
+    toothClassificationElement.value = "fdi";
+  }
+
+  // Marca que o botão foi clicado
+  isButtonClicked = true;
 });
 
 // Seleciona o elemento <select> pelo ID
@@ -70,5 +83,4 @@ selectElementTooth.addEventListener("change", (event) => {
   const value = event.target.value;
 
   updateLabel(value, typeName);
-
 });
