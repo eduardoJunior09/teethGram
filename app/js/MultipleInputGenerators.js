@@ -78,6 +78,8 @@ function createMultivaluedValues(inputMultValues, triData) {
     const inputElement = document.createElement("input");
     inputElement.type = "number";
     inputElement.value = fields[index];
+    inputElement.min = "0";
+    inputElement.classList.add("input-field");
     valueDiv.appendChild(inputElement);
 
     inputMultValues.appendChild(valueDiv);

@@ -39,6 +39,8 @@ function createInputs(dataList, indexFdiList) {
     //criação do input(number)
     const input = document.createElement("input");
     input.type = "number";
+    input.min = "0";
+    input.classList.add("input-field");
     inputSection.appendChild(input);
 
     // divição dos inputs por grupos (Superior e Inferior)

@@ -12,6 +12,12 @@ const titleSection = document.getElementById("section-title");
 const geberateInputBtn = document.getElementById("generate-input");
 const selectElement = document.getElementById("index-entry");
 const boxInputSection = document.getElementById("input-container");
+const errorMessage = document.getElementById("error-message");
+
+//Variáveis referente aos botões
+const btnGenerateHistogram = document.getElementById("generate-histogram");
+
+
 
 //Variáveis Globais
 var typeName = null;
@@ -83,4 +89,31 @@ selectElementTooth.addEventListener("change", (event) => {
   const value = event.target.value;
 
   updateLabel(value, typeName);
+});
+
+//Validação dos campos de input
+
+function validateField() {
+  // Selecionar todos os inputs, pertecente a uma class generica "input-field"
+  const allInputs = document.querySelectorAll(".input-field");
+  let allFilled = true; //flag de retorno
+
+  // Verifica se todos os inputs estão preenchidos
+  allInputs.forEach((input) => {
+    if (input.value === "") {
+      allFilled = false;
+    }
+  });
+
+  return allFilled;
+}
+
+btnGenerateHistogram.addEventListener("click", () => {
+  const isValidated = validateField();
+
+  if (isValidated) {
+    console.log("Campos preenchidos");
+  } else {
+    console.log("Não estão preenchidos");
+  }
 });
