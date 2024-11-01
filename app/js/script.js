@@ -17,8 +17,6 @@ const errorMessage = document.getElementById("error-message");
 //Variáveis referente aos botões
 const btnGenerateHistogram = document.getElementById("generate-histogram");
 
-
-
 //Variáveis Globais
 var typeName = null;
 var isButtonClicked = false;
@@ -113,7 +111,9 @@ btnGenerateHistogram.addEventListener("click", () => {
 
   if (isValidated) {
     console.log("Campos preenchidos");
+    errorMessage.style.display = "none";
   } else {
     console.log("Não estão preenchidos");
+    errorMessage.style.display = "block";
   }
 });
