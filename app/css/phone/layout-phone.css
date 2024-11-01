@@ -54,13 +54,13 @@
   }
 
   .container-section {
-    max-width: 95vw;
+    max-width: 100%;
     margin: 1vw auto;
     padding: 1vw;
   }
 
   .container-main {
-    width: 90vw;
+    width: 100%;
     align-items: start;
   }
 
@@ -77,7 +77,7 @@
 
   .quadrant-form {
     grid-template-columns: 1fr;
-    margin-bottom: 10vw;
+    margin-bottom: 5vw;
   }
 
   .input-block-rl {
@@ -106,7 +106,7 @@
 
   .tooth-classification {
     margin: 5vw 0;
-    width: 90vw;
+    width: 100%;
   }
 
   footer {
