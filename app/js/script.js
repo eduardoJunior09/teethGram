@@ -1,6 +1,11 @@
 import { createInputsByIndex } from "./GeneratorInputs.js";
 import { createInputsByIndexMultiple } from "./MultipleInputGenerators.js";
 import { updateLabel } from "./LabelModifier.js";
+import { CPO_D, CEO_D } from "./data_structures/IndexesData.js";
+
+// Instâncias de CPO_D e CEO_D
+const cpo_d = new CPO_D();
+const ceo_d = new CEO_D();
 
 // Variáveis de manipulação do DOM na tela inicial
 const cpoBtn = document.getElementById("permanent-teeth");
@@ -89,8 +94,26 @@ selectElementTooth.addEventListener("change", (event) => {
   updateLabel(value, typeName);
 });
 
-//Validação dos campos de input
+// Função para salvar os valores dos inputs nos objetos das classes
+function saveInputValues() {
+  // Seleciona todos os inputs com a classe "input-field"
+  const allInputs = document.querySelectorAll(".input-field");
 
+  // Verifica o tipo (permanente ou decíduo) e seleciona o objeto correspondente
+  const indexObject = typeName === "cpo" ? cpo_d : ceo_d;
+
+  // Itera sobre os inputs e armazena o valor no objeto adequado
+  allInputs.forEach((input, idx) => {
+    const valor = input.value;
+
+    if (valor !== "") {
+      // Define o valor em dataList ou triDataList conforme necessário
+      indexObject.setData(valor, idx);
+    }
+  });
+}
+
+//Validação dos campos de input
 function validateField() {
   // Selecionar todos os inputs, pertecente a uma class generica "input-field"
   const allInputs = document.querySelectorAll(".input-field");
@@ -108,10 +131,39 @@ function validateField() {
 
 btnGenerateHistogram.addEventListener("click", () => {
   const isValidated = validateField();
+  const value = selectElementTooth.value;
+  let dadosDentes, labelDentes, main;
+
+  main = document.getElementById("section-histogram-render");
+  main.style.width = "100%";
+  main.style.height = "500px";
+  main.textContent = " ";
 
   if (isValidated) {
     console.log("Campos preenchidos");
     errorMessage.style.display = "none";
+    // Salva os valores preenchidos
+    saveInputValues();
+
+    if (typeName == "cpo") {
+      dadosDentes = cpo_d.dataList;
+      if (value === "fdi") {
+        labelDentes = cpo_d.indexFdiList;
+      } else if (value === "ada") {
+        labelDentes = cpo_d.indexAdaList;
+      }
+    } else {
+      dadosDentes = ceo_d.dataList;
+      if (value === "fdi") {
+        labelDentes = ceo_d.indexFdiList;
+      } else if (value === "ada") {
+        labelDentes = ceo_d.indexAdaList;
+      }
+    }
+
+    let histogram = new Histogram(main, dadosDentes, labelDentes);
+    console.log(dadosDentes);
+    histogram.generateHistogram(); // para renderizar na tela
   } else {
     console.log("Não estão preenchidos");
     errorMessage.style.display = "block";
