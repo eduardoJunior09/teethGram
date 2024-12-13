@@ -90,8 +90,11 @@ const selectElementTooth = document.getElementById("tooth-classification");
 selectElementTooth.addEventListener("change", (event) => {
   // Obtém o valor da opção selecionada
   const value = event.target.value;
-
+  console.log(value);
   updateLabel(value, typeName);
+  document.getElementById("box-histogram-render").style.display = "none";
+  document.getElementById("section-histogram-render-superior").innerHTML = " ";
+  document.getElementById("section-histogram-render-inferior").innerHTML = " ";
 });
 
 // Função para salvar os valores dos inputs nos objetos das classes
@@ -132,14 +135,25 @@ function validateField() {
 btnGenerateHistogram.addEventListener("click", () => {
   const isValidated = validateField();
   const value = selectElementTooth.value;
-  let dadosDentes, labelDentes, main;
+  let dadosDentes, labelDentes, espaco_superior, espaco_inferior;
 
-  main = document.getElementById("section-histogram-render");
-  main.style.width = "100%";
-  main.style.height = "500px";
-  main.textContent = " ";
+  document.getElementById("box-histogram-render").style.display = "flex";
+
+  espaco_superior = document.getElementById(
+    "section-histogram-render-superior"
+  );
+  espaco_inferior = document.getElementById(
+    "section-histogram-render-inferior"
+  );
 
   if (isValidated) {
+    espaco_superior.style.width = "80%";
+    espaco_superior.style.height = "300px";
+    espaco_superior.textContent = " ";
+    espaco_inferior.style.width = "80%";
+    espaco_inferior.style.height = "300px";
+    espaco_inferior.textContent = " ";
+
     console.log("Campos preenchidos");
     errorMessage.style.display = "none";
     // Salva os valores preenchidos
@@ -161,9 +175,33 @@ btnGenerateHistogram.addEventListener("click", () => {
       }
     }
 
-    let histogram = new Histogram(main, dadosDentes, labelDentes);
+    // separar o array de dados em dois
+    let meio = Math.ceil(dadosDentes.length / 2); // Arredonda para cima para lidar com arrays ímpares
+    const dadosDentesSuperior = dadosDentes.slice(0, meio); // Primeira metade
+    const dadosDentesInferior = dadosDentes.slice(meio); // Segunda metade
+
+    // separar o array de dados em dois
+    meio = Math.ceil(labelDentes.length / 2); // Arredonda para cima para lidar com arrays ímpares
+    const labelDentesSuperior = labelDentes.slice(0, meio); // Primeira metade
+    const labelDentesInferior = labelDentes.slice(meio); // Segunda metade
+
+    let histogram_superior = new Histogram(
+      espaco_superior,
+      dadosDentesSuperior,
+      labelDentesSuperior,
+      "top"
+    );
+
     console.log(dadosDentes);
-    histogram.generateHistogram(); // para renderizar na tela
+    histogram_superior.generateHistogram(); // para renderizar na tela
+    let histogram_inferior = new Histogram(
+      espaco_inferior,
+      dadosDentesInferior,
+      labelDentesInferior,
+      "bottom"
+    );
+    console.log(dadosDentes);
+    histogram_inferior.generateHistogram(); // para renderizar na tela
   } else {
     console.log("Não estão preenchidos");
     errorMessage.style.display = "block";

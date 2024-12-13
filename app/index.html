@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/phone/layout-phone.css" />
     <link rel="stylesheet" href="css/componentes.css" />
     <link rel="stylesheet" href="css/phone/componentes-phone.css" />
-    <link rel="stylesheet" href="histograma/css/style.css">
+    <link rel="stylesheet" href="histograma/css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -19,6 +19,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   </head>
   <body>
     <!--HEADER-->
@@ -158,7 +159,24 @@
             <!--Botão Histograma-->
 
             <!--Seção do histogramas-->
-            <div id="section-histogram-render" class="section-histogram-render"></div>
+            <div id="box-histogram-render" class="box-histogram-render">
+              <div id="section-to-image" class="section-to-image">
+                <div
+                  id="section-histogram-render-superior"
+                  class="section-histogram-render-superior"
+                ></div>
+                <p class="label-histogram-render">Número do dente no arco</p>
+                <div
+                  id="section-histogram-render-inferior"
+                  class="section-histogram-render-inferior"
+                ></div>
+              </div>
+              <div class="box-histogram-btn">
+                <button id="btn-save-image" class="btn-secondary btn-hover-form">
+                  Download Imagem
+                </button>
+              </div>
+            </div>
             <!--Seção do histogramas-->
           </section>
           <!--Seção Input Zonas-->
@@ -171,5 +189,6 @@
     <footer>&copy; 2024 Feito em Jequié, Bahia</footer>
     <script type="module" src="js/script.js"></script>
     <script src="histograma/js/script.js"></script>
+    <script src="js/ScriptCanvas.js"></script>
   </body>
 </html>

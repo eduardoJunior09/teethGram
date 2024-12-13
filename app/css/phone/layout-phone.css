@@ -1,5 +1,5 @@
 @media (max-width: 800px) {
-  input[type='number']{
+  input[type="number"] {
     font-size: 7vw;
     padding: 0;
   }
@@ -107,6 +107,21 @@
   .tooth-classification {
     margin: 5vw 0;
     width: 100%;
+  }
+
+  .label-histogram-render {
+    font-size: clamp(12px, 1.5vw, 16px);
+  }
+
+  .box-histogram-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: auto;
+    margin-top: 3vw 0;
+    padding: 3vw;
   }
 
   footer {
