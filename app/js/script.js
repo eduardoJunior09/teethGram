@@ -137,7 +137,7 @@ btnGenerateHistogram.addEventListener("click", () => {
   const value = selectElementTooth.value;
   let dadosDentes, labelDentes, espaco_superior, espaco_inferior;
 
-  document.getElementById("box-histogram-render").style.display = "flex";
+
 
   espaco_superior = document.getElementById(
     "section-histogram-render-superior"
@@ -147,6 +147,7 @@ btnGenerateHistogram.addEventListener("click", () => {
   );
 
   if (isValidated) {
+    document.getElementById("box-histogram-render").style.display = "flex";
     espaco_superior.style.width = "80%";
     espaco_superior.style.height = "300px";
     espaco_superior.textContent = " ";
