@@ -16,12 +16,26 @@ class Histogram {
       this._container.classList.add("inverted");
     }
 
-
     let maxDataSerieValue = this.findMax(this._dataSerie);
+
+    // cria a regua lateral
+    const sideBar = document.createElement("div");
+    sideBar.classList.add("side-bar");
+
+    const textBar = document.createElement("div");
+    textBar.classList.add("text-bar");
+
+    const textP = document.createElement("p");
+    textP.classList.add("text-p");
+    textP.innerHTML = "Média";
+    textBar.appendChild(textP);
 
     // cria o elemento que representa os números da regua lateral
     const ruleBar = document.createElement("div");
     ruleBar.classList.add("rule-bar");
+
+    sideBar.appendChild(textBar);
+    sideBar.appendChild(ruleBar);
 
     // Define os valores para a régua lateral
     const step = maxDataSerieValue / 4; // Dividindo o intervalo em 4 partes iguais
@@ -79,7 +93,7 @@ class Histogram {
     }
 
     // adiciona bar-content e ruleBar ao content
-    content.appendChild(ruleBar);
+    content.appendChild(sideBar);
     content.appendChild(barContent);
 
     // adiciona labelContent

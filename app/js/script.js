@@ -25,6 +25,7 @@ const btnGenerateHistogram = document.getElementById("generate-histogram");
 //Variáveis Globais
 var typeName = null;
 var isButtonClicked = false;
+const histogramSection = document.getElementById("box-histogram-render");
 
 // Função para adicionar ou remover opções do select
 function manipulateSelectOptions(optionText, optionValue) {
@@ -62,6 +63,7 @@ geberateInputBtn.addEventListener("click", () => {
   const optionValue = selectElement.value;
 
   boxInputSection.style.display = "block";
+  histogramSection.style.display = "none";
 
   if (optionValue === "total") {
     console.log(typeName);
@@ -92,9 +94,8 @@ selectElementTooth.addEventListener("change", (event) => {
   const value = event.target.value;
   console.log(value);
   updateLabel(value, typeName);
-  document.getElementById("box-histogram-render").style.display = "none";
-  document.getElementById("section-histogram-render-superior").innerHTML = " ";
-  document.getElementById("section-histogram-render-inferior").innerHTML = " ";
+  histogramSection.style.display = "none";
+
 });
 
 // Função para salvar os valores dos inputs nos objetos das classes
@@ -137,8 +138,6 @@ btnGenerateHistogram.addEventListener("click", () => {
   const value = selectElementTooth.value;
   let dadosDentes, labelDentes, espaco_superior, espaco_inferior;
 
-
-
   espaco_superior = document.getElementById(
     "section-histogram-render-superior"
   );
@@ -147,7 +146,7 @@ btnGenerateHistogram.addEventListener("click", () => {
   );
 
   if (isValidated) {
-    document.getElementById("box-histogram-render").style.display = "flex";
+    histogramSection.style.display = "flex";
     espaco_superior.style.width = "80%";
     espaco_superior.style.height = "300px";
     espaco_superior.textContent = " ";
