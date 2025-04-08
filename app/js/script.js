@@ -251,7 +251,7 @@ function histogramTotal() {
     histogram_inferior.generateHistogramTotal(); // para renderizar na tela
     document.getElementById("histogram-legend-section").style.display =
     "flex";
-    ("histogram-legend-section-cpo").style.display =
+    document.getElementById("histogram-legend-section-cpo").style.display =
       "none";
   } else {
     console.log("Não estão preenchidos");
@@ -341,7 +341,7 @@ function histogramMulti() {
 
     document.getElementById("histogram-legend-section-cpo").style.display =
       "flex";
-      ("histogram-legend-section").style.display =
+      document.getElementById("histogram-legend-section").style.display =
     "none";
   } else {
     console.log("Não estão preenchidos");
