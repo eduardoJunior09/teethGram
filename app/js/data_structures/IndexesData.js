@@ -1,11 +1,11 @@
 class TriData {
   constructor() {
-    this.fildA = "$";
-    this.fildB = "$";
     this.fildC = "$";
-    this.labelFildA = "C";
-    this.labelFildB = "P";
-    this.labelFildC = "O";
+    this.fildP = "$";
+    this.fildO = "$";
+    this.labelFildC = "C";
+    this.labelFildP = "P";
+    this.labelFildO = "O";
   }
 }
 
@@ -29,7 +29,7 @@ class Index {
   }
 
   setData(valor, index) {
-    this.dataList[index] = valor;
+    this.dataList[index] = parseFloat(valor);
   }
 }
 

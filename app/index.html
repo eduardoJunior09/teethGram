@@ -19,6 +19,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   </head>
   <body>
@@ -66,7 +67,7 @@
 
           <!--Botão Formulário-->
           <button id="generate-input" class="btn-secondary btn-hover-form">
-          Incluir Dados
+            Incluir Dados
           </button>
           <!--Botão Formulário-->
         </div>
@@ -170,9 +171,47 @@
                   id="section-histogram-render-inferior"
                   class="section-histogram-render-inferior"
                 ></div>
+
+                <div class="histogram-legend">
+                  <p>LEGENDA</p>
+                  <div id="histogram-legend-section" class="histogram-legend-section">
+                    <div
+                      class="histogram-legend-box histogram-legend-box-total"
+                    ></div>
+                    <p class="histogram-legend-text">Total</p>
+                  </div>
+
+                  <div id="histogram-legend-section-cpo" class="histogram-legend-section-cpo">
+
+                    <div class="histogram-legend-box-cpo">
+                      <div
+                        class="histogram-legend-box histogram-legend-box-c"
+                      ></div>
+                      <p class="histogram-legend-text">Cariados</p>
+                    </div>
+
+                    <div class="histogram-legend-box-cpo">
+                      <div
+                        class="histogram-legend-box histogram-legend-box-p"
+                      ></div>
+                      <p class="histogram-legend-text">Perdidos</p>
+                    </div>
+
+                    <div class="histogram-legend-box-cpo">
+                      <div
+                        class="histogram-legend-box histogram-legend-box-o"
+                      ></div>
+                      <p class="histogram-legend-text">Obturados</p>
+                    </div>
+
+                  </div>
+                </div>
               </div>
               <div class="box-histogram-btn">
-                <button id="btn-save-image" class="btn-secondary btn-hover-form">
+                <button
+                  id="btn-save-image"
+                  class="btn-secondary btn-hover-form"
+                >
                   Download Imagem
                 </button>
               </div>
@@ -188,7 +227,8 @@
     <!--MAIN-->
     <footer>&copy; 2024 Feito em Jequié, Bahia</footer>
     <script type="module" src="js/script.js"></script>
-    <script src="histograma/js/script.js"></script>
+    <script src="histograma/js/scriptMulti.js"></script>
+    <script src="histograma/js/scriptTotal.js"></script>
     <script src="js/ScriptCanvas.js"></script>
   </body>
 </html>

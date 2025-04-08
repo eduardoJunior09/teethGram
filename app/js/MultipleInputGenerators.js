@@ -64,8 +64,8 @@ function createInputs(indexInstance) {
 }
 
 function createMultivaluedValues(inputMultValues, triData) {
-  const labels = [triData.labelFildA, triData.labelFildB, triData.labelFildC];
-  const fields = [triData.fildA, triData.fildB, triData.fildC];
+  const labels = [triData.labelFildC, triData.labelFildP, triData.labelFildO];
+  const fields = [triData.fildC, triData.fildP, triData.fildO];
 
   labels.forEach((labelText, index) => {
     const valueDiv = document.createElement("div");

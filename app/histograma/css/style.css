@@ -1,221 +1,259 @@
-:root {
-  /* Cores */
-  --white: #ffffff;
-  --black: #000000;
-  --secondary-color: #48107c;
+/* @font-face {
+  src: url("../assets/LeagueGothic_Condensed-Regular.ttf") format("truetype");
+  font-family: "League Gothic";
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+} */
 
-  /* Espaço */
-  --size-xs-px: 4px;
-  --size-sm-px: 8px;
-  --size-md-px: 12px;
-  --size-lg-px: 16px;
-  --size-xl-px: 20px;
-  --size-400-px: 400px;
+@import url("https://fonts.googleapis.com/css2?family=League+Gothic&display=swap");
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .container {
-  font-family: "Open Sans";
   display: grid;
-  grid-template-rows: 0.9fr 0.1fr;
-  justify-self: center;
-  align-self: center;
-  gap: 1%;
+  grid-template-columns: 0.1fr 0.9fr;
+  grid-template-rows: 0.1fr 0.8fr 0.1fr;
+  grid-template-areas:
+    "x y"
+    "a b"
+    "c d";
+  gap: 8px;
+
   width: 100%;
   height: 100%;
-  min-height: 200px;
 
-  /* parte superior */
-  & .content {
+  font-size: 12px;
+  font-family: "League Gothic", sans-serif;
+
+  & .area-x {
+    grid-area: x;
+    width: 100%;
+    height: 100%;
+  }
+
+  & .area-y {
+    grid-area: y;
+    width: 100%;
+    height: 100%;
+
     display: grid;
-    grid-template-columns: 0.1fr 0.9fr;
-    min-width: 100%;
-    gap: 2%;
 
-    /* régua lateral*/
-    & .side-bar {
+    gap: 4px;
+
+    & .caption-bar {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: end;
+      flex-direction: column;
       gap: 4px;
 
-      width: 100%;
-      height: 100%;
+      & .legendaC,
+      .legendaO,
+      .legendaP,
+      .legendaTotal {
+        width: 100%;
+        text-align: center;
+        padding: 4px 0;
+        color: white;
+        border-radius: 4px;
 
-      & .text-bar {
+        font-size: 12px;
+        font-weight: 400;
+      }
+
+      & .legendaC {
+        background-color: #000000;
+      }
+
+      & .legendaP {
+        background-color: #1a1a1a;
+      }
+
+      & .legendaO {
+        background-color: #414141;
+      }
+
+      & .legendaTotal {
+        background-color: #000000;
+      }
+    }
+  }
+
+  & .area-a {
+    grid-area: a;
+    width: 100%;
+    height: 100%;
+
+    & .side-bar {
+      display: flex;
+      height: 100%;
+      gap: 4px;
+
+      & .rule-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         transform: rotate(-0.25turn);
 
-        & .text-p {
-          font-size: 16px;
-          font-weight: 600;
+        & p {
+          font-size: 14px;
+          font-weight: 400;
         }
       }
 
       & .rule-bar {
         display: flex;
         justify-content: space-between;
+        align-items: end;
         flex-direction: column;
-        height: 100%;
+        border-right: 2px solid #000000;
 
-        /* cada numero da régua lateral */
-        & .rule-bar-item {
-          text-align: end;
-          color: var(--black);
-          font-size: 16px;
+        & .rule-bar-item{
+          font-size: 12px;
+          font-weight: 400;
         }
       }
     }
+  }
 
-    /* barras */
-    & .bar-content {
-      width: 100%;
+  & .area-b {
+    grid-area: b;
+    width: 100%;
+    height: 100%;
+
+    & .data-content {
       display: grid;
-      gap: 2%;
-      border-bottom: 3px solid #747474;
+
       width: 100%;
       height: 100%;
+      gap: 4px;
 
-      /* espaço vertical total de cada barra */
+      border-bottom: 2px solid #636363;
+
       & .bar {
-        height: 100%;
         display: flex;
         align-items: end;
         justify-content: center;
 
-        /* percentual de preenchimento de cada barra*/
+        width: 100%;
+        height: 100%;
+
         & .value-bar {
+          display: flex;
+          justify-content: end;
+          align-items: center;
+          flex-direction: column;
+
           width: 100%;
-          background-color: var(--black);
+          background-color: #000000;
+        }
+
+        & .value-bar-multi {
+          display: flex;
+          justify-content: end;
+          align-items: center;
+          flex-direction: column;
+
+          width: 100%;
+
+          & .valueC {
+            width: 100%;
+            background-color: #000000;
+          }
+          & .valueP {
+            width: 100%;
+            background-color: #1a1a1a;
+          }
+          & .valueO {
+            width: 100%;
+            background-color: #414141;
+          }
         }
       }
     }
   }
 
-  /* parte inferior (label do eixo x)*/
-  & .contentLabel {
-    display: grid;
-    grid-template-columns: 0.1fr 0.9fr;
+  & .area-c {
+    grid-area: c;
     width: 100%;
-    gap: 2%;
-
-    /* label do eixo x */
-    & .label-content {
-      width: 100%;
-      display: grid;
-      gap: 2%;
-
-      /* cada um dos labels */
-      & .bar-label {
-        display: flex;
-        align-items: baseline;
-        justify-content: center;
-        font-size: 16px;
-      }
-    }
+    height: 100%;
   }
-}
 
-.inverted {
-  grid-template-rows: 0.1fr 0.9fr;
+  & .area-d {
+    grid-area: d;
+    width: 100%;
+    height: 100%;
 
-  /* parte superior */
-  & .content {
-    order: 2;
-
-    & .side-bar {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
+    & .label-content {
+      display: grid;
 
       width: 100%;
       height: 100%;
+      gap: 4px;
 
-      & .text-bar {
-        transform: rotate(-0.25turn);
-
-        & .text-p {
-          font-size: 16px;
-          font-weight: 600;
-        }
-      }
-
-      & .rule-bar {
-        flex-direction: column-reverse;
-      }
-    }
-
-    /* barras */
-    & .bar-content {
-      border-top: 3px solid #747474;
-      border-bottom: none;
-      /* espaço vertical total de cada barra */
-      & .bar {
-        align-items: start;
-        /* percentual de preenchimento de cada barra*/
-      }
-    }
-  }
-
-  /* parte inferior (label do eixo x)*/
-  & .contentLabel {
-    order: 1;
-    display: grid;
-    grid-template-columns: 0.1fr 0.9fr;
-    width: 100%;
-    gap: 2%;
-
-    /* label do eixo x */
-    & .label-content {
-      width: 100%;
-      display: grid;
-      gap: 2%;
-
-      /* cada um dos labels */
       & .bar-label {
         display: flex;
-        align-items: baseline;
+        align-items: start;
         justify-content: center;
-        font-size: 16px;
+        font-size: 12px;
+        font-weight: 400;
       }
     }
   }
 }
 
-@media (max-width: 800px) {
-  .container {
-    min-height: 200px;
-    min-width: 350px;
-    /* parte superior */
-    & .content {
-      /* régua lateral*/
+.inverted-container {
+  grid-template-columns: 0.1fr 0.9fr;
+  grid-template-rows: 0.1fr 0.8fr 0.1fr;
 
-      & .side-bar {
-        gap: 1vw;
+  grid-template-areas:
+    "c d"
+    "a b"
+    "x y";
 
-        & .text-bar {
-          
-          & .text-p {
-            font-size: clamp(12px, 1.5vw, 16px);
-          }
-        }
-        & .rule-bar {
-          /* cada numero da régua lateral */
-          & .rule-bar-item {
-            font-size: clamp(12px, 1.5vw, 16px);
-          }
+  & .area-y {
+    & .caption-bar {
+      flex-direction: column-reverse;
+    }
+  }
+
+  & .area-a {
+    & .side-bar {
+      & .inverted-rule-bar {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  & .area-b {
+    & .data-content {
+      border-bottom: none;
+      border-top: 2px solid #636363;
+      & .bar {
+        align-items: start;
+        justify-content: start;
+        & .value-bar-multi {
+          display: flex;
+          justify-content: start;
+          align-items: start;
+          flex-direction: column-reverse;
         }
       }
-
-      /* barras */
     }
-    /* parte inferior (label do eixo x)*/
-    & .contentLabel {
-      /* label do eixo x */
-      & .label-content {
-        /* cada um dos labels */
-        & .bar-label {
-          font-size: clamp(12px, 1.5vw, 16px);
-        }
+  }
+
+  & .area-d {
+    & .label-content {
+      & .bar-label {
+        align-items: end;
       }
     }
   }

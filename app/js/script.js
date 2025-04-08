@@ -95,26 +95,55 @@ selectElementTooth.addEventListener("change", (event) => {
   console.log(value);
   updateLabel(value, typeName);
   histogramSection.style.display = "none";
-
 });
 
-// Função para salvar os valores dos inputs nos objetos das classes
+// // Função para salvar os valores dos inputs nos objetos das classes
+// function saveInputValues() {
+//   // Seleciona todos os inputs com a classe "input-field"
+//   const allInputs = document.querySelectorAll(".input-field");
+
+//   // Verifica o tipo (permanente ou decíduo) e seleciona o objeto correspondente
+//   const indexObject = typeName === "cpo" ? cpo_d : ceo_d;
+
+//   // Itera sobre os inputs e armazena o valor no objeto adequado
+//   allInputs.forEach((input, idx) => {
+//     const valor = input.value;
+
+//     if (valor !== "") {
+//       // Define o valor em dataList ou triDataList conforme necessário
+//       indexObject.setData(valor, idx);
+//     }
+//   });
+// }
 function saveInputValues() {
-  // Seleciona todos os inputs com a classe "input-field"
   const allInputs = document.querySelectorAll(".input-field");
 
-  // Verifica o tipo (permanente ou decíduo) e seleciona o objeto correspondente
   const indexObject = typeName === "cpo" ? cpo_d : ceo_d;
 
-  // Itera sobre os inputs e armazena o valor no objeto adequado
-  allInputs.forEach((input, idx) => {
-    const valor = input.value;
+  // Caso o indexObject tenha triDataList, usamos ela
+  const isTriData = !!indexObject.triDataList;
 
-    if (valor !== "") {
-      // Define o valor em dataList ou triDataList conforme necessário
-      indexObject.setData(valor, idx);
+  if (selectElement.value != "total") {
+    for (let i = 0; i < allInputs.length; i += 3) {
+      const idx = i / 3;
+      const triData = indexObject.triDataList[idx];
+
+      triData.fildC = parseInt(allInputs[i].value) || 0;
+      triData.fildP = parseInt(allInputs[i + 1].value) || 0;
+      triData.fildO = parseInt(allInputs[i + 2].value) || 0;
+
+      // Se quiser, pode calcular um total e jogar no dataList também:
+      indexObject.setData(triData.fildA + triData.fildB + triData.fildC, idx);
     }
-  });
+  } else {
+    // Caso com apenas um input por item
+    allInputs.forEach((input, idx) => {
+      const valor = input.value;
+      if (valor !== "") {
+        indexObject.setData(valor, idx);
+      }
+    });
+  }
 }
 
 //Validação dos campos de input
@@ -134,6 +163,16 @@ function validateField() {
 }
 
 btnGenerateHistogram.addEventListener("click", () => {
+  const optionValue = selectElement.value;
+
+  if (optionValue === "total") {
+    histogramTotal();
+  } else {
+    histogramMulti();
+  }
+});
+
+function histogramTotal() {
   const isValidated = validateField();
   const value = selectElementTooth.value;
   let dadosDentes, labelDentes, espaco_superior, espaco_inferior;
@@ -147,11 +186,17 @@ btnGenerateHistogram.addEventListener("click", () => {
 
   if (isValidated) {
     histogramSection.style.display = "flex";
-    espaco_superior.style.width = "80%";
-    espaco_superior.style.height = "300px";
+
+    espaco_superior.style.width = "100%";
+    espaco_superior.style.maxWidth = "500px";
+    espaco_superior.style.minWidth = "300px";
+    espaco_superior.style.height = "500px";
     espaco_superior.textContent = " ";
-    espaco_inferior.style.width = "80%";
-    espaco_inferior.style.height = "300px";
+
+    espaco_inferior.style.width = "100%";
+    espaco_inferior.style.maxWidth = "500px";
+    espaco_inferior.style.minWidth = "300px";
+    espaco_inferior.style.height = "500px";
     espaco_inferior.textContent = " ";
 
     console.log("Campos preenchidos");
@@ -185,7 +230,7 @@ btnGenerateHistogram.addEventListener("click", () => {
     const labelDentesSuperior = labelDentes.slice(0, meio); // Primeira metade
     const labelDentesInferior = labelDentes.slice(meio); // Segunda metade
 
-    let histogram_superior = new Histogram(
+    let histogram_superior = new HistogramTotal(
       espaco_superior,
       dadosDentesSuperior,
       labelDentesSuperior,
@@ -193,8 +238,99 @@ btnGenerateHistogram.addEventListener("click", () => {
     );
 
     console.log(dadosDentes);
+
+    histogram_superior.generateHistogramTotal(); // para renderizar na tela
+
+    let histogram_inferior = new HistogramTotal(
+      espaco_inferior,
+      dadosDentesInferior,
+      labelDentesInferior,
+      "bottom"
+    );
+    console.log(dadosDentes);
+    histogram_inferior.generateHistogramTotal(); // para renderizar na tela
+    document.getElementById("histogram-legend-section").style.display =
+    "flex";
+    ("histogram-legend-section-cpo").style.display =
+      "none";
+  } else {
+    console.log("Não estão preenchidos");
+    errorMessage.style.display = "block";
+  }
+}
+
+function histogramMulti() {
+  const isValidated = validateField();
+  const value = selectElementTooth.value;
+  let dadosDentes = [],
+    labelDentes,
+    espaco_superior,
+    espaco_inferior;
+
+  espaco_superior = document.getElementById(
+    "section-histogram-render-superior"
+  );
+  espaco_inferior = document.getElementById(
+    "section-histogram-render-inferior"
+  );
+
+  if (isValidated) {
+    histogramSection.style.display = "flex";
+    espaco_superior.style.width = "100%";
+    espaco_superior.style.maxWidth = "500px";
+    espaco_superior.style.minWidth = "300px";
+    espaco_superior.style.height = "500px";
+    espaco_superior.textContent = " ";
+
+    espaco_inferior.style.width = "100%";
+    espaco_inferior.style.maxWidth = "500px";
+    espaco_inferior.style.minWidth = "300px";
+    espaco_inferior.style.height = "500px";
+    espaco_inferior.textContent = " ";
+
+    console.log("Campos preenchidos");
+    errorMessage.style.display = "none";
+    // Salva os valores preenchidos
+    saveInputValues();
+
+    if (typeName == "cpo") {
+      dadosDentes = cpo_d.triDataList;
+      if (value === "fdi") {
+        labelDentes = cpo_d.indexFdiList;
+      } else if (value === "ada") {
+        labelDentes = cpo_d.indexAdaList;
+      }
+    } else {
+      dadosDentes = ceo_d.triDataList;
+      if (value === "fdi") {
+        labelDentes = ceo_d.indexFdiList;
+      } else if (value === "ada") {
+        labelDentes = ceo_d.indexAdaList;
+      }
+    }
+
+    // separar o array de dados em dois
+    let meio = Math.ceil(dadosDentes.length / 2); // Arredonda para cima para lidar com arrays ímpares
+    const dadosDentesSuperior = dadosDentes.slice(0, meio); // Primeira metade
+    const dadosDentesInferior = dadosDentes.slice(meio); // Segunda metade
+
+    // separar o array de dados em dois
+    meio = Math.ceil(labelDentes.length / 2); // Arredonda para cima para lidar com arrays ímpares
+    const labelDentesSuperior = labelDentes.slice(0, meio); // Primeira metade
+    const labelDentesInferior = labelDentes.slice(meio); // Segunda metade
+
+    let histogram_superior = new HistogramMulti(
+      espaco_superior,
+      dadosDentesSuperior,
+      labelDentesSuperior,
+      "top"
+    );
+
+    console.log(dadosDentes);
+
     histogram_superior.generateHistogram(); // para renderizar na tela
-    let histogram_inferior = new Histogram(
+
+    let histogram_inferior = new HistogramMulti(
       espaco_inferior,
       dadosDentesInferior,
       labelDentesInferior,
@@ -202,8 +338,13 @@ btnGenerateHistogram.addEventListener("click", () => {
     );
     console.log(dadosDentes);
     histogram_inferior.generateHistogram(); // para renderizar na tela
+
+    document.getElementById("histogram-legend-section-cpo").style.display =
+      "flex";
+      ("histogram-legend-section").style.display =
+    "none";
   } else {
     console.log("Não estão preenchidos");
     errorMessage.style.display = "block";
   }
-});
+}

@@ -181,9 +181,10 @@ main {
 
   width: 100%;
   height: auto;
+  overflow-y: auto;
 }
 
-.label-histogram-render{
+.label-histogram-render {
   font-size: 16px;
 }
 
@@ -226,4 +227,71 @@ footer {
 
 .error-message p {
   color: #ff0000;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.histogram-legend {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 4px;
+
+  width: 100%;
+  padding: 8px;
+}
+
+.histogram-legend p {
+  font-size: 14px;
+}
+
+.histogram-legend-section {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.histogram-legend-section-cpo {
+  display: none;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.histogram-legend-text {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.histogram-legend-box {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+}
+
+.histogram-legend-box-cpo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.histogram-legend-box-total,
+.histogram-legend-box-c {
+  background-color: #000000;
+}
+.histogram-legend-box-p {
+  background-color: #1a1a1a;
+}
+.histogram-legend-box-o {
+  background-color: #414141;
 }
