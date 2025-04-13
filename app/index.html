@@ -56,12 +56,43 @@
         <div class="container-main">
           <h2 id="section-title"></h2>
           <!--Seção form informações-->
-          <div class="index-entry">
-            <p class="form-label">Índice</p>
-            <select class="form-input" name="index-entry" id="index-entry">
-              <option value="amostral">TOTAL</option>
-              <option value="definir">definir</option>
-            </select>
+
+          <div class="box-select-radio">
+            <div class="index-entry">
+              <p class="form-label">Índice</p>
+              <select class="form-input" name="index-entry" id="index-entry">
+                <option value="amostral">TOTAL</option>
+                <option value="definir">definir</option>
+              </select>
+            </div>
+
+            <form class="form-distribuicao">
+              <p class="form-titulo">Modo de Distribuição</p>
+
+              <div class="form-opcao">
+                <input
+                  type="radio"
+                  id="media"
+                  name="modo_distribuicao"
+                  value="media"
+                  class="form-radio"
+                />
+                <label for="media" class="form-label-radio">Média</label><br />
+              </div>
+
+              <div class="form-opcao">
+                <input
+                  type="radio"
+                  id="percentual"
+                  name="modo_distribuicao"
+                  value="percentual"
+                  class="form-radio"
+                />
+                <label for="percentual" class="form-label-radio"
+                  >Percentual</label
+                ><br />
+              </div>
+            </form>
           </div>
           <!--Seção form informações-->
 
@@ -174,15 +205,20 @@
 
                 <div class="histogram-legend">
                   <p>LEGENDA</p>
-                  <div id="histogram-legend-section" class="histogram-legend-section">
+                  <div
+                    id="histogram-legend-section"
+                    class="histogram-legend-section"
+                  >
                     <div
                       class="histogram-legend-box histogram-legend-box-total"
                     ></div>
                     <p class="histogram-legend-text">Total</p>
                   </div>
 
-                  <div id="histogram-legend-section-cpo" class="histogram-legend-section-cpo">
-
+                  <div
+                    id="histogram-legend-section-cpo"
+                    class="histogram-legend-section-cpo"
+                  >
                     <div class="histogram-legend-box-cpo">
                       <div
                         class="histogram-legend-box histogram-legend-box-c"
@@ -203,7 +239,6 @@
                       ></div>
                       <p class="histogram-legend-text">Obturados</p>
                     </div>
-
                   </div>
                 </div>
               </div>
