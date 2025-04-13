@@ -158,9 +158,9 @@ function saveInputValues() {
       const idx = i / 3;
       const triData = indexObject.triDataList[idx];
 
-      triData.fildC = parseInt(allInputs[i].value) || 0;
-      triData.fildP = parseInt(allInputs[i + 1].value) || 0;
-      triData.fildO = parseInt(allInputs[i + 2].value) || 0;
+      triData.fildC = parseFloat(allInputs[i].value) || 0;
+      triData.fildP = parseFloat(allInputs[i + 1].value) || 0;
+      triData.fildO = parseFloat(allInputs[i + 2].value) || 0;
 
       // Se quiser, pode calcular um total e jogar no dataList também:
       indexObject.setData(triData.fildA + triData.fildB + triData.fildC, idx);

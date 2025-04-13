@@ -58,9 +58,10 @@ class HistogramMulti {
     const ruleBar = document.createElement("div");
     ruleBar.classList.add("rule-bar");
 
-    const step = maxDataSerieValue / 4;
-    const ruleValues = [maxDataSerieValue, step * 3, step * 2, step, 0].map(
-      (v) => parseFloat(v.toFixed(1))
+    const step = maxDataSerieValue / 4; // Dividindo o intervalo em 4 partes iguais
+    let ruleValues;
+    ruleValues = [maxDataSerieValue, step * 3, step * 2, step, 0].map((value) =>
+      parseFloat(value.toFixed(2))
     );
 
     for (let i = 0; i < 5; i++) {
@@ -138,21 +139,15 @@ class HistogramMulti {
 
       const legendaC = document.createElement("span");
       legendaC.classList.add("legendaC");
-      legendaC.innerHTML = `${((item.fildC / maxDataSerieValue) * 100).toFixed(
-        1
-      )}`;
+      legendaC.innerHTML = `${item.fildC.toFixed(2)}`;
 
       const legendaP = document.createElement("span");
       legendaP.classList.add("legendaP");
-      legendaP.innerHTML = `${((item.fildP / maxDataSerieValue) * 100).toFixed(
-        1
-      )}`;
+      legendaP.innerHTML = `${item.fildP.toFixed(2)}`;
 
       const legendaO = document.createElement("span");
       legendaO.classList.add("legendaO");
-      legendaO.innerHTML = `${((item.fildO / maxDataSerieValue) * 100).toFixed(
-        1
-      )}`;
+      legendaO.innerHTML = `${item.fildO.toFixed(2)}`;
 
       captionBar.appendChild(legendaO);
       captionBar.appendChild(legendaP);
