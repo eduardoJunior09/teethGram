@@ -75,6 +75,15 @@
     margin-bottom: 1vw;
   }
 
+  .form-radio {
+    width: 5vw;
+    height: 5vw;
+  }
+
+  .form-label-radio {
+    font-size: 5vw;
+  }
+
   .quadrant-form {
     grid-template-columns: 1fr;
     margin-bottom: 5vw;
@@ -124,6 +133,15 @@
     padding: 3vw;
   }
 
+  .box-select-radio {
+    width: 100%;
+    margin: 3vw 0;
+  }
+
+  .form-distribuicao {
+    width: 100%;
+  }
+  
   footer {
     width: 100vw;
     height: 10vw;
