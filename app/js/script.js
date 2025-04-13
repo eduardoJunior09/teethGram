@@ -14,7 +14,7 @@ const toothSection = document.getElementById("data-section");
 const titleSection = document.getElementById("section-title");
 
 // Variáveis de manipulação do DOM na seção de formulário e entrada
-const geberateInputBtn = document.getElementById("generate-input");
+const generateInputBtn = document.getElementById("generate-input");
 const selectElement = document.getElementById("index-entry");
 const boxInputSection = document.getElementById("input-container");
 const errorMessage = document.getElementById("error-message");
@@ -86,7 +86,7 @@ ceoBtn.addEventListener("click", () =>
 );
 
 // Eventos na seção de formulário e entrada
-geberateInputBtn.addEventListener("click", () => {
+generateInputBtn.addEventListener("click", () => {
   const optionValue = selectElement.value;
 
   boxInputSection.style.display = "block";
@@ -96,10 +96,10 @@ geberateInputBtn.addEventListener("click", () => {
 
   if (optionValue === "total") {
     console.log(typeName);
-    createInputsByIndex(typeName);
+    createInputsByIndex(typeName, radioEscolhido);
   } else {
     console.log(typeName);
-    createInputsByIndexMultiple(typeName);
+    createInputsByIndexMultiple(typeName, radioEscolhido);
   }
 
   // Só reseta a classificação dos dentes para "FDI" a partir do segundo clique

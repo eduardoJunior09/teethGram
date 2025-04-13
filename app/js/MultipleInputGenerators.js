@@ -5,11 +5,11 @@ const blockTopLeft = document.getElementById("input-block-top-left");
 const blockBottomRight = document.getElementById("input-block-bottom-right");
 const blockBottomLeft = document.getElementById("input-block-bottom-left");
 
-export function createInputsByIndexMultiple(typeName) {
-  blockTopRight.innerHTML =  " ";
-  blockTopLeft.innerHTML = " "; 
+export function createInputsByIndexMultiple(typeName, radioEscolhido) {
+  blockTopRight.innerHTML = " ";
+  blockTopLeft.innerHTML = " ";
   blockBottomRight.innerHTML = " ";
-  blockBottomLeft.innerHTML = " "; 
+  blockBottomLeft.innerHTML = " ";
 
   let indexInstance;
 
@@ -19,10 +19,10 @@ export function createInputsByIndexMultiple(typeName) {
     indexInstance = new CEO_D();
   }
 
-  createInputs(indexInstance);
+  createInputs(indexInstance, radioEscolhido);
 }
 
-function createInputs(indexInstance) {
+function createInputs(indexInstance, radioEscolhido) {
   const { dataList, triDataList } = indexInstance;
 
   for (let i = 0; i < dataList.length; i++) {
@@ -39,31 +39,30 @@ function createInputs(indexInstance) {
     inputMultValues.classList.add("mult-values");
     inputSection.appendChild(inputMultValues);
 
-    createMultivaluedValues(inputMultValues, triDataList[i]);
+    createMultivaluedValues(inputMultValues, triDataList[i], radioEscolhido);
 
     // divição dos inputs por grupos (Superior e Inferior)
     if (i < dataList.length / 2) {
-      var dataListNumber = (dataList.length/2)/2; 
+      var dataListNumber = dataList.length / 2 / 2;
 
-      if(i<dataListNumber){ 
+      if (i < dataListNumber) {
         blockTopRight.appendChild(inputSection);
-      }else if(i => dataListNumber){ 
+      } else if ((i) => dataListNumber) {
         blockTopLeft.appendChild(inputSection);
       }
-    
     } else {
-      var dataListNumber = (dataList.length * 75) / 100; 
-       
-      if(i<dataListNumber){
+      var dataListNumber = (dataList.length * 75) / 100;
+
+      if (i < dataListNumber) {
         blockBottomRight.appendChild(inputSection);
-      }else if(i => dataListNumber){
+      } else if ((i) => dataListNumber) {
         blockBottomLeft.appendChild(inputSection);
       }
     }
   }
 }
 
-function createMultivaluedValues(inputMultValues, triData) {
+function createMultivaluedValues(inputMultValues, triData, radioEscolhido) {
   const labels = [triData.labelFildC, triData.labelFildP, triData.labelFildO];
   const fields = [triData.fildC, triData.fildP, triData.fildO];
 
@@ -79,7 +78,26 @@ function createMultivaluedValues(inputMultValues, triData) {
     inputElement.type = "number";
     inputElement.value = fields[index];
     inputElement.min = "0";
+    inputElement.step = "0.01";
+
+    if (radioEscolhido === "media") {
+      inputElement.max = "1";
+    } else {
+      inputElement.max = "100";
+    }
+
     inputElement.classList.add("input-field");
+
+    // Limitador manual de valor ao digitar
+    inputElement.addEventListener("input", function () {
+      const val = parseFloat(this.value);
+      if (radioEscolhido === "media" && val > 1) {
+        this.value = 1;
+      } else if (radioEscolhido !== "media" && val > 100) {
+        this.value = 100;
+      }
+    });
+
     valueDiv.appendChild(inputElement);
 
     inputMultValues.appendChild(valueDiv);

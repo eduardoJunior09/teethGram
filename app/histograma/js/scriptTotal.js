@@ -51,12 +51,11 @@ class HistogramTotal {
 
     const text = document.createElement("p");
 
-    if(this._distribuicao === "media"){
+    if (this._distribuicao === "media") {
       text.innerHTML = "Média";
-    }else{
+    } else {
       text.innerHTML = "Percentual";
     }
-   
 
     ruleText.appendChild(text);
     sideBar.appendChild(ruleText);
@@ -65,10 +64,10 @@ class HistogramTotal {
     const ruleBar = document.createElement("div");
     ruleBar.classList.add("rule-bar");
 
-    // Define os valores para a régua lateral
     const step = maxDataSerieValue / 4; // Dividindo o intervalo em 4 partes iguais
-    const ruleValues = [maxDataSerieValue, step * 3, step * 2, step, 0].map(
-      (value) => parseFloat(value.toFixed(1))
+    let ruleValues;
+    ruleValues = [maxDataSerieValue, step * 3, step * 2, step, 0].map((value) =>
+      parseFloat(value.toFixed(2))
     );
 
     for (let i = 0; i < 5; i++) {
@@ -136,7 +135,7 @@ class HistogramTotal {
 
       const legendaC = document.createElement("span");
       legendaC.classList.add("legendaTotal");
-      legendaC.innerHTML = `${this._dataSerie[i].toFixed(1)}`;
+      legendaC.innerHTML = `${this._dataSerie[i].toFixed(2)}`;
 
       captionBar.appendChild(legendaC);
 
@@ -146,10 +145,10 @@ class HistogramTotal {
   }
 
   findMax() {
-    let max = parseInt(this._dataSerie[0]);
+    let max = parseFloat(this._dataSerie[0]);
     for (let i = 1; i < this._dataSerie.length; i++) {
-      if (parseInt(this._dataSerie[i]) > max)
-        max = parseInt(this._dataSerie[i]);
+      if (parseFloat(this._dataSerie[i]) > max)
+        max = parseFloat(this._dataSerie[i]);
     }
     return max;
   }
