@@ -1,10 +1,11 @@
 class HistogramTotal {
-  constructor(parent, dataSerie, dataLabel, position) {
+  constructor(parent, dataSerie, dataLabel, position, distribuicao) {
     this._dataSerie = dataSerie;
     this._dataLabel = dataLabel;
     this.position = position;
     this._container = document.createElement("div");
     this._container.classList.add("container");
+    this._distribuicao = distribuicao;
     parent.appendChild(this._container);
   }
 
@@ -49,7 +50,13 @@ class HistogramTotal {
     ruleText.classList.add("rule-text");
 
     const text = document.createElement("p");
-    text.innerHTML = "Média";
+
+    if(this._distribuicao === "media"){
+      text.innerHTML = "Média";
+    }else{
+      text.innerHTML = "Percentual";
+    }
+   
 
     ruleText.appendChild(text);
     sideBar.appendChild(ruleText);

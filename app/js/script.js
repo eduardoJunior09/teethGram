@@ -25,7 +25,34 @@ const btnGenerateHistogram = document.getElementById("generate-histogram");
 //Variáveis Globais
 var typeName = null;
 var isButtonClicked = false;
+let radioEscolhido = null;
+
 const histogramSection = document.getElementById("box-histogram-render");
+
+// Variável global para armazenar o valor escolhido
+let modoEscolhido = null;
+
+// Pega os radios
+const radios = document.querySelectorAll('input[name="modo_distribuicao"]');
+
+// Verifica se algum já está marcado ao carregar a página
+const selecionadoInicial = document.querySelector(
+  'input[name="modo_distribuicao"]:checked'
+);
+if (selecionadoInicial) {
+  radioEscolhido = selecionadoInicial.value;
+  console.log("Valor inicial:", radioEscolhido);
+}
+
+// Escuta as mudanças nos radios
+radios.forEach((radio) => {
+  radio.addEventListener("change", () => {
+    if (radio.checked) {
+      radioEscolhido = radio.value;
+      console.log("Usuário escolheu:", radioEscolhido);
+    }
+  });
+});
 
 // Função para adicionar ou remover opções do select
 function manipulateSelectOptions(optionText, optionValue) {
@@ -64,6 +91,8 @@ geberateInputBtn.addEventListener("click", () => {
 
   boxInputSection.style.display = "block";
   histogramSection.style.display = "none";
+
+  console.log(radioEscolhido);
 
   if (optionValue === "total") {
     console.log(typeName);
@@ -115,6 +144,7 @@ selectElementTooth.addEventListener("change", (event) => {
 //     }
 //   });
 // }
+
 function saveInputValues() {
   const allInputs = document.querySelectorAll(".input-field");
 
@@ -230,11 +260,14 @@ function histogramTotal() {
     const labelDentesSuperior = labelDentes.slice(0, meio); // Primeira metade
     const labelDentesInferior = labelDentes.slice(meio); // Segunda metade
 
+    let distribuicao = radioEscolhido;
+
     let histogram_superior = new HistogramTotal(
       espaco_superior,
       dadosDentesSuperior,
       labelDentesSuperior,
-      "top"
+      "top",
+      distribuicao
     );
 
     console.log(dadosDentes);
@@ -245,12 +278,12 @@ function histogramTotal() {
       espaco_inferior,
       dadosDentesInferior,
       labelDentesInferior,
-      "bottom"
+      "bottom",
+      distribuicao
     );
     console.log(dadosDentes);
     histogram_inferior.generateHistogramTotal(); // para renderizar na tela
-    document.getElementById("histogram-legend-section").style.display =
-    "flex";
+    document.getElementById("histogram-legend-section").style.display = "flex";
     document.getElementById("histogram-legend-section-cpo").style.display =
       "none";
   } else {
@@ -319,11 +352,14 @@ function histogramMulti() {
     const labelDentesSuperior = labelDentes.slice(0, meio); // Primeira metade
     const labelDentesInferior = labelDentes.slice(meio); // Segunda metade
 
+    let distribuicao = radioEscolhido;
+
     let histogram_superior = new HistogramMulti(
       espaco_superior,
       dadosDentesSuperior,
       labelDentesSuperior,
-      "top"
+      "top",
+      distribuicao
     );
 
     console.log(dadosDentes);
@@ -334,15 +370,15 @@ function histogramMulti() {
       espaco_inferior,
       dadosDentesInferior,
       labelDentesInferior,
-      "bottom"
+      "bottom",
+      distribuicao
     );
     console.log(dadosDentes);
     histogram_inferior.generateHistogram(); // para renderizar na tela
 
     document.getElementById("histogram-legend-section-cpo").style.display =
       "flex";
-      document.getElementById("histogram-legend-section").style.display =
-    "none";
+    document.getElementById("histogram-legend-section").style.display = "none";
   } else {
     console.log("Não estão preenchidos");
     errorMessage.style.display = "block";
