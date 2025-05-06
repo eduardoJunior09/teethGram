@@ -11,9 +11,8 @@ class HistogramMulti {
     this._container.classList.add("container");
     parent.appendChild(this._container);
   }
-
   // Método principal que gera o histograma
-  generateHistogram() {
+  generateHistogramMulti() {
     this._container.innerHTML = ""; // Limpa o contéudo anterior
 
     let maxDataSerieValue = this.findMax(); // Encontra o maior valor da série
@@ -194,7 +193,6 @@ class HistogramMulti {
         ruleBar.classList.add("inverted-rule-bar"))
       : null;
   }
-
   // Função responsável por encontrar o maior valor total (C + P + O) na série de dados
   findMax() {
     // Inicializa a variável max com 0, que será usada para armazenar o maior valor encontrado
@@ -215,117 +213,4 @@ class HistogramMulti {
   }
 }
 
-/*
-////////////////////////// GRÁFICO //////////////////////////
 
-// Criação do container principal que irá conter as barras do gráfico
-const content = document.createElement("div");
-content.classList.add("data-content");
-
-// Define o layout de colunas com base na quantidade de rótulos disponíveis
-content.style.gridTemplateColumns = `repeat(${this._dataLabel.length}, auto)`;
-
-// Loop para criação das barras empilhadas do histograma
-for (let i = 0; i < this._dataLabel.length; i++) {
-  const item = this._dataSerie[i]; // Obtém os dados de um grupo (fildC, fildP, fildO)
-
-  const bar = document.createElement("div"); // Contêiner da barra individual
-  bar.classList.add("bar");
-
-  const valueBar = document.createElement("div"); // Contêiner da barra empilhada
-  valueBar.classList.add("value-bar-multi");
-
-  // Criação da parte da barra referente aos dentes cariados (C)
-  const valueC = document.createElement("div");
-  valueC.classList.add("valueC");
-  valueC.style.height = `${(item.fildC / maxDataSerieValue) * 100}%`; // Altura proporcional ao total máximo
-
-  // Parte referente aos dentes perdidos (P)
-  const valueP = document.createElement("div");
-  valueP.classList.add("valueP");
-  valueP.style.height = `${(item.fildP / maxDataSerieValue) * 100}%`;
-
-  // Parte referente aos dentes obturados (O)
-  const valueO = document.createElement("div");
-  valueO.classList.add("valueO");
-  valueO.style.height = `${(item.fildO / maxDataSerieValue) * 100}%`;
-
-  // Define a altura total da barra somando os três componentes
-  const soma = item.fildC + item.fildP + item.fildO;
-  valueBar.style.height = `${(soma / maxDataSerieValue) * 100}%`;
-
-  // Adiciona os segmentos em ordem (de baixo para cima: O, P, C)
-  valueBar.appendChild(valueO);
-  valueBar.appendChild(valueP);
-  valueBar.appendChild(valueC);
-
-  // Adiciona a barra empilhada ao gráfico
-  bar.appendChild(valueBar);
-  content.appendChild(bar);
-}
-
-// Insere o gráfico de barras empilhadas na área B do layout
-areaB.appendChild(content);
-
-
-
-////////////////////////// NOMENCLATURA //////////////////////////
-
-// Criação do container para os rótulos de cada barra
-const contentLabel = document.createElement("div");
-contentLabel.classList.add("label-content");
-
-// Define o layout de colunas para distribuir os rótulos uniformemente
-contentLabel.style.gridTemplateColumns = `repeat(${this._dataLabel.length}, 1fr)`;
-
-// Loop para criação dos rótulos das colunas (categorias)
-for (let i = 0; i < this._dataLabel.length; i++) {
-  const barLabel = document.createElement("span");
-  barLabel.classList.add("bar-label");
-  barLabel.textContent = `${this._dataLabel[i]}`; // Insere o texto do rótulo
-  contentLabel.appendChild(barLabel);
-}
-
-// Adiciona o conjunto de rótulos à área D do gráfico
-areaD.appendChild(contentLabel);
-
-
-
-
-
-////////////////////////// LEGENDA //////////////////////////
-
-// Loop para criação das legendas numéricas com os valores exatos de C, P e O
-for (let i = 0; i < this._dataLabel.length; i++) {
-  const item = this._dataSerie[i]; // Obtém o item atual da série
-
-  const captionBar = document.createElement("div");
-  captionBar.classList.add("caption-bar"); // Contêiner da legenda
-
-  // Cria o elemento da legenda para o componente Obturado (O)
-  const legendaO = document.createElement("span");
-  legendaO.classList.add("legendaO");
-  legendaO.innerHTML = `${item.fildO.toFixed(2)}`; // Valor com 2 casas decimais
-
-  // Cria o elemento da legenda para Perdido (P)
-  const legendaP = document.createElement("span");
-  legendaP.classList.add("legendaP");
-  legendaP.innerHTML = `${item.fildP.toFixed(2)}`;
-
-  // Cria o elemento da legenda para Cariado (C)
-  const legendaC = document.createElement("span");
-  legendaC.classList.add("legendaC");
-  legendaC.innerHTML = `${item.fildC.toFixed(2)}`;
-
-  // Adiciona os valores ao contêiner da legenda, na ordem O → P → C
-  captionBar.appendChild(legendaO);
-  captionBar.appendChild(legendaP);
-  captionBar.appendChild(legendaC);
-
-  // Define o layout da legenda com colunas proporcionais à quantidade de itens
-  areaY.style.gridTemplateColumns = `repeat(${this._dataLabel.length}, auto)`;
-
-  // Adiciona a legenda numérica na área Y do gráfico
-  areaY.appendChild(captionBar);
-}
-*/

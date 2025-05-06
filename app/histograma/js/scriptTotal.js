@@ -11,15 +11,11 @@ class HistogramTotal {
     this._container.classList.add("container");
     parent.appendChild(this._container);
   }
-
   // Método principal que gera o histograma
   generateHistogramTotal() {
     this._container.innerHTML = ""; // Limpa o contéudo anterior
-
     let maxDataSerieValue = this.findMax(this._dataSerie); // Encontra o maior valor da série
-
     ///////////////////// Cria e organiza as áreas visuais gráficas /////////////////////
-
     // Criação das areas
     const areaX = document.createElement("div");
     const areaY = document.createElement("div");
@@ -173,7 +169,6 @@ class HistogramTotal {
         ruleBar.classList.add("inverted-rule-bar"))
       : null;
   }
-
   // Função responsável por encontrar o maior valor dentro do array de dados (dataSerie)
   findMax() {
     // Converte o primeiro valor da série para número de ponto flutuante e o define como o valor inicial máximo
@@ -190,3 +185,5 @@ class HistogramTotal {
     return max; // Retorna o maior valor encontrado na série
   }
 }
+
+
