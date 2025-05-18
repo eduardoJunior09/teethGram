@@ -364,7 +364,7 @@ function histogramMulti() {
 
     console.log(dadosDentes);
 
-    histogram_superior.generateHistogram(); // para renderizar na tela
+    histogram_superior.generateHistogramMulti(); // para renderizar na tela
 
     let histogram_inferior = new HistogramMulti(
       espaco_inferior,
@@ -374,7 +374,7 @@ function histogramMulti() {
       distribuicao
     );
     console.log(dadosDentes);
-    histogram_inferior.generateHistogram(); // para renderizar na tela
+    histogram_inferior.generateHistogramMulti(); // para renderizar na tela
 
     document.getElementById("histogram-legend-section-cpo").style.display =
       "flex";
