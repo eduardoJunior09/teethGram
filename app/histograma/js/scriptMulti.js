@@ -106,17 +106,17 @@ class HistogramMulti {
 
       const valueC = document.createElement("div");
       valueC.classList.add("valueC");
-      valueC.style.height = `${(item.fildC / maxDataSerieValue) * 100}%`;
+      valueC.style.height = `${(item.fieldC / maxDataSerieValue) * 100}%`;
 
       const valueP = document.createElement("div");
       valueP.classList.add("valueP");
-      valueP.style.height = `${(item.fildP / maxDataSerieValue) * 100}%`;
+      valueP.style.height = `${(item.fieldP / maxDataSerieValue) * 100}%`;
 
       const valueO = document.createElement("div");
       valueO.classList.add("valueO");
-      valueO.style.height = `${(item.fildO / maxDataSerieValue) * 100}%`;
+      valueO.style.height = `${(item.fieldO / maxDataSerieValue) * 100}%`;
 
-      const soma = item.fildC + item.fildP + item.fildO;
+      const soma = item.fieldC + item.fieldP + item.fieldO;
       valueBar.style.height = `${(soma / maxDataSerieValue) * 100}%`;
 
       valueBar.appendChild(valueO);
@@ -163,17 +163,17 @@ class HistogramMulti {
       // Valor da coluna C
       const legendaC = document.createElement("span");
       legendaC.classList.add("legendaC");
-      legendaC.innerHTML = `${item.fildC.toFixed(2)}`;
+      legendaC.innerHTML = `${item.fieldC.toFixed(2)}`;
 
       // Valor da coluna P
       const legendaP = document.createElement("span");
       legendaP.classList.add("legendaP");
-      legendaP.innerHTML = `${item.fildP.toFixed(2)}`;
+      legendaP.innerHTML = `${item.fieldP.toFixed(2)}`;
 
       // Valor da coluna O
       const legendaO = document.createElement("span");
       legendaO.classList.add("legendaO");
-      legendaO.innerHTML = `${item.fildO.toFixed(2)}`;
+      legendaO.innerHTML = `${item.fieldO.toFixed(2)}`;
 
       // Adiciona os valores ao contêiner
       captionBar.appendChild(legendaO);
@@ -200,9 +200,9 @@ class HistogramMulti {
 
     // Percorre todos os elementos da série de dados
     for (let i = 0; i < this._dataSerie.length; i++) {
-      const item = this._dataSerie[i]; // Obtém o item atual (objeto com fildC, fildP, fildO)
+      const item = this._dataSerie[i]; // Obtém o item atual (objeto com fieldC, fieldP, fieldO)
 
-      const soma = item.fildC + item.fildP + item.fildO; // Soma os três componentes do índice CPO-D
+      const soma = item.fieldC + item.fieldP + item.fieldO; // Soma os três componentes do índice CPO-D
 
       // Verifica se a soma atual é maior que o valor máximo armazenado
       if (soma > max) {

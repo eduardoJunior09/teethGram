@@ -158,12 +158,12 @@ function saveInputValues() {
       const idx = i / 3;
       const triData = indexObject.triDataList[idx];
 
-      triData.fildC = parseFloat(allInputs[i].value) || 0;
-      triData.fildP = parseFloat(allInputs[i + 1].value) || 0;
-      triData.fildO = parseFloat(allInputs[i + 2].value) || 0;
+      triData.fieldC = parseFloat(allInputs[i].value) || 0;
+      triData.fieldP = parseFloat(allInputs[i + 1].value) || 0;
+      triData.fieldO = parseFloat(allInputs[i + 2].value) || 0;
 
       // Se quiser, pode calcular um total e jogar no dataList também:
-      indexObject.setData(triData.fildA + triData.fildB + triData.fildC, idx);
+      indexObject.setData(triData.fieldA + triData.fieldB + triData.fieldC, idx);
     }
   } else {
     // Caso com apenas um input por item
@@ -318,7 +318,7 @@ function histogramMulti() {
     espaco_inferior.style.width = "100%";
     espaco_inferior.style.maxWidth = "500px";
     espaco_inferior.style.minWidth = "300px";
-    espaco_inferior.style.height = "500px";
+    espaco_inferior.style.height = "500px";l
     espaco_inferior.textContent = " ";
 
     console.log("Campos preenchidos");

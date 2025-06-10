@@ -63,8 +63,8 @@ function createInputs(indexInstance, radioEscolhido) {
 }
 
 function createMultivaluedValues(inputMultValues, triData, radioEscolhido) {
-  const labels = [triData.labelFildC, triData.labelFildP, triData.labelFildO];
-  const fields = [triData.fildC, triData.fildP, triData.fildO];
+  const labels = [triData.labelFieldC, triData.labelFieldP, triData.labelFieldO];
+  const fields = [triData.fieldC, triData.fieldP, triData.fieldO];
 
   labels.forEach((labelText, index) => {
     const valueDiv = document.createElement("div");

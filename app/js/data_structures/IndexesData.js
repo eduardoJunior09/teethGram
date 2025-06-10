@@ -1,11 +1,11 @@
 class TriData {
   constructor() {
-    this.fildC = "$";
-    this.fildP = "$";
-    this.fildO = "$";
-    this.labelFildC = "C";
-    this.labelFildP = "P";
-    this.labelFildO = "O";
+    this.fieldC = "$";
+    this.fieldP = "$";
+    this.fieldO = "$";
+    this.labelFieldC = "C";
+    this.labelFieldP = "P";
+    this.labelFieldO = "O";
   }
 }
 
