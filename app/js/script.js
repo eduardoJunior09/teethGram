@@ -318,7 +318,7 @@ function histogramMulti() {
     espaco_inferior.style.width = "100%";
     espaco_inferior.style.maxWidth = "500px";
     espaco_inferior.style.minWidth = "300px";
-    espaco_inferior.style.height = "500px";l
+    espaco_inferior.style.height = "500px";
     espaco_inferior.textContent = " ";
 
     console.log("Campos preenchidos");
